@@ -87,6 +87,14 @@ The supplied examples use one character and selected prompts. The [creative-scen
 
 The [real-model check](docs/real-model-validation.md) reproduces all 256 historical A tensors and both rendered beach prompt states exactly with `--method historical`. It also reports capture, solve and rendering times, and the numerical difference from the stable CPU mode.
 
+## Why I'm sharing this
+
+I'd been letting these experiments collect dust for a few months. Seeing [Fizgig's](https://github.com/shootthesound/Fizgig) recent release and the current mechanistic interpretability conversations nudged me to share them. Fizgig is the more mature, fully featured toolkit; I hope this smaller research release helps someone too.
+
+Fizgig's block-weight controls scale the existing LoRA contribution in each block, with profiling and ablations to help inspect the effects. Delta surgery refits the LoRA's A factors from generic and triggered activation captures, keeping B fixed, to change which inputs it responds to. Fizgig also has separate [DOP-based LoRA Isolation training](https://github.com/shootthesound/Fizgig/blob/master/docs/LORA_ISOLATION.md); the comparison here is specifically with its block-weight repair tools.
+
+I'm also following Nick Cammarata's Goodfire essay, [Neural Networks Are Already Clean](https://already-clean.goodfire.com/), a working hypothesis about studying native neurons and circuits directly. I'd like to explore how these adapter experiments can connect with that wider MI work through better probes and controlled interventions. For now, I'm sharing the code, comparisons and failure cases in case they're useful.
+
 ## Optional: a small algebra demo
 
 For an explanation of the solver before collecting model activations:
