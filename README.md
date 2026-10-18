@@ -1,10 +1,10 @@
+**[Open the DeltaScope website →](https://matlowai.github.io/DeTangle/)**
+
 # DeTangle
 
 Delta surgery for **Krea 2 and your own trained LoRA**: refit the adapter to reduce its response to generic prompts while retaining its response when the trigger is requested.
 
 The workflow is to capture activations with your original LoRA active, solve a repaired adapter, then compare both adapters and the base model on matching prompts and seeds. The examples here show where that separation works and where likeness is lost. The illustrated adapters are not included; use your own LoRA for the workflow below.
-
-[Open DeltaScope: interactive comparisons and research guide](https://matlowai.github.io/DeTangle/).
 
 ![Beach comparison: generic prompts above, triggered prompts below](examples/beach-comparison-171018.jpg)
 
