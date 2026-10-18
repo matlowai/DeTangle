@@ -1,0 +1,115 @@
+{
+  "date_utc": "2026-10-18",
+  "purpose": "Real Krea 2 historical-solver compatibility check on the public beach prompt pair",
+  "software": {
+    "python": "3.12",
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "installed_release_source_sha256": {
+      "core.py": "4b4d24b8a2d9baa0c89bb383aa8aa0bdba31091e2f1fcf21b00727a6d27522b0",
+      "cli.py": "2b48d6aa721d29fad0d5101beab6438d756e4f5dd823113feefc55a867a799c4"
+    }
+  },
+  "hardware": {
+    "cpu": "AMD Ryzen 7 9800X3D",
+    "cpu_threads": 8,
+    "gpu": "NVIDIA GeForce RTX 5090, 32 GB",
+    "gpu_count_used": 1
+  },
+  "inputs": {
+    "source_sha256": "56c97051354ca63d61fa38d0b6baad73b55f805804cf72692dda2ec056150e57",
+    "class_capture_sha256": "2e76d6e0ce7a4f466b88d4e370e7acb65bd73a9aee0148c78d0b9305839fc345",
+    "trigger_capture_sha256": "9bce2044d44a19962951746f532fdcb696ee8b9c57f994efe51dc03ab3bc6e30",
+    "historical_adapter_sha256": "50375079b51cd6dc77944e4c06d6f746b52c8f864e9dc2218dd15495b82bf4ee"
+  },
+  "repair": {
+    "mu": 0.3,
+    "ridge": 0.001,
+    "center": "zero",
+    "method": "historical",
+    "input_rows_per_layer_per_role": 1024,
+    "rank": 32,
+    "output_sha256": "2396c3e012eaa2c5bb84f4001076174d4c5270fb187622096fd6d803685a1ac2"
+  },
+  "tensor_validation": {
+    "a_layers_exact": 256,
+    "a_layers_total": 256,
+    "all_non_a_tensors_identical": true,
+    "original_metadata_retained": true,
+    "aggregate_ba_relative_difference": 0.0
+  },
+  "render": {
+    "model": "Krea 2 Turbo",
+    "width": 832,
+    "height": 1216,
+    "steps": 8,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "strength": 1.25,
+    "seed": 171018,
+    "comparisons": [
+      {
+        "axis": "generic",
+        "seed": 171018,
+        "strength": 1.25,
+        "historical_similarity": -0.06931260228157043,
+        "release_similarity": -0.06931260228157043,
+        "published_similarity": -0.07089264690876007,
+        "score_difference": 0.0,
+        "face_counts": [
+          1,
+          1
+        ],
+        "pixels_identical": true,
+        "pixel_mae_0_255": 0.0,
+        "pixel_max_difference_0_255": 0,
+        "historical_image_sha256": "f2986bc92997c3db79e1039c89955561170060611372c71368a18ce2737636d8",
+        "release_image_sha256": "ae48b9b3657dd6a710fb90d791fa5757ec5d008d71880cc30127b7de6a743d92"
+      },
+      {
+        "axis": "target",
+        "seed": 171018,
+        "strength": 1.25,
+        "historical_similarity": 0.6780787706375122,
+        "release_similarity": 0.6780787706375122,
+        "published_similarity": 0.6780787706375122,
+        "score_difference": 0.0,
+        "face_counts": [
+          1,
+          1
+        ],
+        "pixels_identical": true,
+        "pixel_mae_0_255": 0.0,
+        "pixel_max_difference_0_255": 0,
+        "historical_image_sha256": "92e6ca5fbd3077ec294395f3aadf1c5705bb3a0c3509638b2ff64eaf3e8972e6",
+        "release_image_sha256": "91fb7bc404d851dd04c3ef429408588793751193211a79fd90a04bfa1e4bcdec"
+      }
+    ]
+  },
+  "timing": {
+    "historical_compatibility_solve_seconds": 264.62192029703874,
+    "stable_cpu_solve_seconds": 85.902616012,
+    "tensor_audit_server_startup_four_renders_and_scoring_seconds": 55.361411,
+    "historical_solve_start_utc": "2026-10-18T01:42:03.229319+00:00",
+    "historical_solve_finish_utc": "2026-10-18T01:46:27.851213+00:00",
+    "scope": "Installed CLI startup, input hashes, checkpoint/capture reading, solve, fit diagnostics, output hashing and writing. Reuses saved captures.",
+    "fresh_capture_observed_seconds_range": [
+      815.200259,
+      865.735812
+    ],
+    "fresh_capture_workload": "72 prompt/latent pairs per role; 216 model forwards; 1024 retained rows per role per layer; includes model initialization and output."
+  },
+  "stable_cpu_comparison": {
+    "method": "auto",
+    "a_layers_exact": 26,
+    "aggregate_ba_relative_difference": 0.2052851790284336,
+    "target_likeness": 0.641541600227356
+  },
+  "limits": [
+    "One diagnostic prompt pair validates implementation compatibility, not broad preservation quality.",
+    "Historical and release outputs were rendered together with matching settings. The generic historical rerender differs slightly from the earlier published generic score, shown explicitly in the comparison rows.",
+    "Checkpoint file hashes differ because provenance metadata differs; all tensors match exactly. PNG file hashes can differ through metadata while decoded RGB pixels match.",
+    "Timing is observed workstation wall time, not a controlled benchmark; capture reuse and each timed stage are stated."
+  ]
+}

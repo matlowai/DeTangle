@@ -1,0 +1,153 @@
+{
+  "schema": 1,
+  "date": "2026-10-17",
+  "seeds": [
+    171017,
+    171018
+  ],
+  "default_columns": [
+    {
+      "method": "naive",
+      "strength": 1.0,
+      "label": "Naive 1.0"
+    },
+    {
+      "method": "surgery",
+      "strength": 1.25,
+      "label": "Scalar surgery 1.25"
+    },
+    {
+      "method": "base",
+      "strength": 1.0,
+      "label": "Base"
+    },
+    {
+      "method": "dop",
+      "strength": 1.0,
+      "label": "DOP 1.0"
+    }
+  ],
+  "rendered_strengths": [
+    1.0,
+    1.25,
+    1.5
+  ],
+  "base_rule": "No adapter; one freshly rendered base per exact prompt and seed, shared across strength displays.",
+  "render": {
+    "model": "Krea 2 Turbo, FP8 scaled",
+    "text_encoder": "Qwen3-VL 4B, FP8 scaled",
+    "vae": "Qwen Image VAE",
+    "width": 832,
+    "height": 1216,
+    "steps": 8,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "denoise": 1.0,
+    "batch_size": 1,
+    "negative_conditioning": "Zeroed positive conditioning",
+    "adapter_application": "Model only"
+  },
+  "adapters": {
+    "naive": {
+      "training_steps": 4000,
+      "rank": 32,
+      "alpha": 32
+    },
+    "surgery": {
+      "parent": "naive",
+      "mu": 0.3,
+      "relative_ridge": 0.001,
+      "ridge_center": "zero"
+    },
+    "dop": {
+      "training_steps": 4000
+    }
+  },
+  "historical_surgery_capture": {
+    "base_condition": "Training model condition; distinct from Turbo deployment used for these renders",
+    "tokens_per_layer_per_role": 1024,
+    "flow_fractions": [
+      0.1,
+      0.25,
+      0.4,
+      0.55,
+      0.7,
+      0.85
+    ],
+    "noise_seed": 42,
+    "reservoir_draw_seed": null,
+    "reservoir_draw_note": "Selected historical draw was unseeded; later repeat controls used 1001 and 1002.",
+    "actually_consumed_prompts": 72,
+    "actually_consumed_latents": 72,
+    "prompts_with_explicit_age_descriptions": 71,
+    "coverage_note": "Historical expansion was truncated before consumption. No astronaut, spaceflight or wizard examples in the consumed pool. These differences motivate hypotheses; they do not establish the failure mechanism."
+  },
+  "trigger_prefix": "rlsa, ",
+  "class_cue": "woman",
+  "requested_age": null,
+  "pairs": [
+    {
+      "scene": "arcade",
+      "trigger": "trigger_arcade",
+      "generic": "class_arcade"
+    },
+    {
+      "scene": "lighthouse",
+      "trigger": "trigger_lighthouse",
+      "generic": "class_lighthouse"
+    },
+    {
+      "scene": "space_station",
+      "trigger": "trigger_space_station",
+      "generic": "class_space_station"
+    },
+    {
+      "scene": "wizard_workshop",
+      "trigger": "trigger_wizard_workshop",
+      "generic": "class_wizard_workshop"
+    }
+  ],
+  "prompts": [
+    {
+      "id": "trigger_arcade",
+      "role": "triggered",
+      "text": "rlsa, A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque teal satin bomber jacket over a high-neck yellow cotton shirt, with her chest and shoulders fully covered. She has a small playful smile. Colorful retro arcade cabinets and pink and cyan neon signs glow softly out of focus behind her. Soft neutral light illuminates her face, with subtle neon rim lighting."
+    },
+    {
+      "id": "class_arcade",
+      "role": "generic",
+      "text": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque teal satin bomber jacket over a high-neck yellow cotton shirt, with her chest and shoulders fully covered. She has a small playful smile. Colorful retro arcade cabinets and pink and cyan neon signs glow softly out of focus behind her. Soft neutral light illuminates her face, with subtle neon rim lighting."
+    },
+    {
+      "id": "trigger_lighthouse",
+      "role": "triggered",
+      "text": "rlsa, A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque bright red raincoat fully zipped to the collar, with the hood down and her chest and shoulders fully covered. A few windblown strands of hair frame her face without covering her eyes. A lighthouse and rolling ocean waves are softly blurred behind her under a dramatic stormy sky. Soft daylight illuminates her face; tiny rain droplets bead on the coat."
+    },
+    {
+      "id": "class_lighthouse",
+      "role": "generic",
+      "text": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque bright red raincoat fully zipped to the collar, with the hood down and her chest and shoulders fully covered. A few windblown strands of hair frame her face without covering her eyes. A lighthouse and rolling ocean waves are softly blurred behind her under a dramatic stormy sky. Soft daylight illuminates her face; tiny rain droplets bead on the coat."
+    },
+    {
+      "id": "trigger_space_station",
+      "role": "triggered",
+      "text": "rlsa, A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still."
+    },
+    {
+      "id": "class_space_station",
+      "role": "generic",
+      "text": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still."
+    },
+    {
+      "id": "trigger_wizard_workshop",
+      "role": "triggered",
+      "text": "rlsa, A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque deep-plum velvet wizard robe with a closed high collar and small embroidered silver stars, with her chest and shoulders fully covered and no hat. She has a gentle amused expression. A cozy workshop of softly glowing glass bottles and old books is blurred behind her. Warm window light illuminates her face, with a few floating golden sparks in the distant background. Photorealistic live-action fantasy film still."
+    },
+    {
+      "id": "class_wizard_workshop",
+      "role": "generic",
+      "text": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque deep-plum velvet wizard robe with a closed high collar and small embroidered silver stars, with her chest and shoulders fully covered and no hat. She has a gentle amused expression. A cozy workshop of softly glowing glass bottles and old books is blurred behind her. Warm window light illuminates her face, with a few floating golden sparks in the distant background. Photorealistic live-action fantasy film still."
+    }
+  ]
+}

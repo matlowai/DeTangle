@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.cache/
+qa/
+*.sqlite*
+*.safetensors
+*.onnx
+*.pt
+*.pth
+.env*
+*.log
+.adapter-review/
+node_modules/

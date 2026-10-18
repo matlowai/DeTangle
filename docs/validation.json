@@ -1,0 +1,60 @@
+{
+  "local_viewer": true,
+  "static_subpath_export": true,
+  "columns_and_strengths": true,
+  "wipe": true,
+  "method_guide": true,
+  "lessons": true,
+  "summaries": true,
+  "bookmarks": true,
+  "mobile": true,
+  "explicit_asset_allowlist": true,
+  "score_endpoint_token_required": true,
+  "all_13_method_dialogs": true,
+  "guide_figure": true,
+  "guide_mobile": true,
+  "console_errors": [],
+  "date": "2026-10-17",
+  "app_unit_tests": 17,
+  "core_unit_tests": 15,
+  "clean_installed_viewer": {
+    "python": "3.12",
+    "installed_distributions": [
+      "matlowai-deltascope"
+    ],
+    "records": 200,
+    "private_weights_required": false,
+    "default_scene": "beach",
+    "guide_sections": 19,
+    "deep_sections": 13,
+    "methods": 13
+  },
+  "face_calibration": {
+    "native_images": 12,
+    "reference_faces": 34,
+    "detection_misses": 2,
+    "max_absolute_difference": 0.0,
+    "errors": 0,
+    "reference_dependency_binding": true
+  },
+  "pages_deployment": "Manual GitHub Actions workflow",
+  "default_beach_four_pairs": true,
+  "five_scenes": true,
+  "aggregate_dig_more": true,
+  "release_unit_tests": 8,
+  "release_payload_audit": {
+    "passed": true,
+    "worktree_files": 257,
+    "public_files": 207,
+    "approved_images": 210
+  },
+  "browser_history": {
+    "back_forward": true,
+    "lesson_links": true,
+    "tabs_cases_seeds_strengths_columns": true,
+    "partial_url_defaults": true,
+    "duplicate_navigation_does_not_add_history": true
+  },
+  "research_guide_sections": 19,
+  "real_model_validation": "real-model-validation.json"
+}

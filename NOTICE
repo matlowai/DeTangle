@@ -1,0 +1,10 @@
+This standalone seed extracts and extends MatlowAI's conditional least-squares
+solver from its delta-surgery research code. MatlowAI has released the files in
+this repository under the MIT License. This release does not change the license
+of the separate original research package or any third-party models/software.
+
+The generated comparison illustrations are included as educational examples.
+No model weights, reference photographs, face embeddings, or training data are
+included. The source checkpoints and reference set used for the historical
+measurements are private, so those image scores cannot be recomputed from this
+repository alone. The synthetic demo and solver tests are independently runnable.

@@ -1,0 +1,43 @@
+name: DeltaScope Pages preview
+on:
+  workflow_dispatch:
+    inputs:
+      deploy:
+        description: Publish the reviewed build (requires ENABLE_PAGES repository variable)
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: deltascope-pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: python -m pip install './lab[images]'
+      - run: python -m unittest discover -s lab/tests -v
+      - run: python tools/audit_release.py
+      - run: deltascope export lab/src/deltascope/case_studies/conditional_identity.json --out _site
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+  deploy:
+    if: ${{ inputs.deploy && vars.ENABLE_PAGES == 'true' }}
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+      - name: Publish reviewed artifact
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,166 @@
+[
+  {
+    "scene": "arcade",
+    "methods": {
+      "naive": {
+        "strength": 1.0,
+        "triggered_likeness": 0.763630598783493,
+        "generic_excess": 0.7222968572750688,
+        "likeness_faces": 2,
+        "likeness_images": 2,
+        "generic_pairs": 2,
+        "generic_images": 2
+      },
+      "surgery": {
+        "strength": 1.25,
+        "triggered_likeness": 0.7292692065238953,
+        "generic_excess": -0.10329957958310843,
+        "likeness_faces": 2,
+        "likeness_images": 2,
+        "generic_pairs": 2,
+        "generic_images": 2
+      },
+      "base": {
+        "strength": 1.0,
+        "triggered_likeness": -0.029534166678786278,
+        "generic_excess": 0.0,
+        "likeness_faces": 2,
+        "likeness_images": 2,
+        "generic_pairs": 2,
+        "generic_images": 2
+      },
+      "dop": {
+        "strength": 1.0,
+        "triggered_likeness": 0.7504436373710632,
+        "generic_excess": 0.1150081092491746,
+        "likeness_faces": 2,
+        "likeness_images": 2,
+        "generic_pairs": 2,
+        "generic_images": 2
+      }
+    }
+  },
+  {
+    "scene": "lighthouse",
+    "methods": {
+      "naive": {
+        "strength": 1.0,
+        "triggered_likeness": 0.6673882007598877,
+        "generic_excess": 0.7001886498183012,
+        "likeness_faces": 2,
+        "likeness_images": 2,
+        "generic_pairs": 2,
+        "generic_images": 2
+      },
+      "surgery": {
+        "strength": 1.25,
+        "triggered_likeness": 0.6236042082309723,
+        "generic_excess": -0.007329026237130165,
+        "likeness_faces": 2,
+        "likeness_images": 2,
+        "generic_pairs": 2,
+        "generic_images": 2
+      },
+      "base": {
+        "strength": 1.0,
+        "triggered_likeness": -0.06377522647380829,
+        "generic_excess": 0.0,
+        "likeness_faces": 2,
+        "likeness_images": 2,
+        "generic_pairs": 2,
+        "generic_images": 2
+      },
+      "dop": {
+        "strength": 1.0,
+        "triggered_likeness": 0.7366231977939606,
+        "generic_excess": 0.09476500330492854,
+        "likeness_faces": 2,
+        "likeness_images": 2,
+        "generic_pairs": 2,
+        "generic_images": 2
+      }
+    }
+  },
+  {
+    "scene": "space_station",
+    "methods": {
+      "naive": {
+        "strength": 1.0,
+        "triggered_likeness": 0.6668899953365326,
+        "generic_excess": 0.7209672294557095,
+        "likeness_faces": 2,
+        "likeness_images": 2,
+        "generic_pairs": 2,
+        "generic_images": 2
+      },
+      "surgery": {
+        "strength": 1.25,
+        "triggered_likeness": 0.13425859808921814,
+        "generic_excess": -0.019038066267967224,
+        "likeness_faces": 2,
+        "likeness_images": 2,
+        "generic_pairs": 2,
+        "generic_images": 2
+      },
+      "base": {
+        "strength": 1.0,
+        "triggered_likeness": -0.05717119202017784,
+        "generic_excess": 0.0,
+        "likeness_faces": 2,
+        "likeness_images": 2,
+        "generic_pairs": 2,
+        "generic_images": 2
+      },
+      "dop": {
+        "strength": 1.0,
+        "triggered_likeness": 0.6981699466705322,
+        "generic_excess": 0.09752274677157402,
+        "likeness_faces": 2,
+        "likeness_images": 2,
+        "generic_pairs": 2,
+        "generic_images": 2
+      }
+    }
+  },
+  {
+    "scene": "wizard_workshop",
+    "methods": {
+      "naive": {
+        "strength": 1.0,
+        "triggered_likeness": 0.7280041873455048,
+        "generic_excess": 0.7253366559743881,
+        "likeness_faces": 2,
+        "likeness_images": 2,
+        "generic_pairs": 2,
+        "generic_images": 2
+      },
+      "surgery": {
+        "strength": 1.25,
+        "triggered_likeness": 0.3322563171386719,
+        "generic_excess": -0.05788581259548664,
+        "likeness_faces": 2,
+        "likeness_images": 2,
+        "generic_pairs": 2,
+        "generic_images": 2
+      },
+      "base": {
+        "strength": 1.0,
+        "triggered_likeness": -0.02246089791879058,
+        "generic_excess": 0.0,
+        "likeness_faces": 2,
+        "likeness_images": 2,
+        "generic_pairs": 2,
+        "generic_images": 2
+      },
+      "dop": {
+        "strength": 1.0,
+        "triggered_likeness": 0.7470094263553619,
+        "generic_excess": 0.10905667021870613,
+        "likeness_faces": 2,
+        "likeness_images": 2,
+        "generic_pairs": 2,
+        "generic_images": 2
+      }
+    }
+  }
+]

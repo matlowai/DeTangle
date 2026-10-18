@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "matlowai-deltascope"
+version = "0.1.0"
+description = "Local paired comparisons, scoring, and case studies for adapters and generative models"
+requires-python = ">=3.10"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE", "NOTICES.md"]
+authors = [{name = "MatlowAI"}]
+dependencies = []
+
+[project.optional-dependencies]
+face = ["insightface==0.7.3", "onnxruntime>=1.20,<2", "numpy>=1.26,<3", "opencv-python-headless>=4.9,<5"]
+images = ["Pillow>=10"]
+
+[project.scripts]
+deltascope = "deltascope.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+deltascope = ["web/*", "case_studies/*.json", "case_studies/images/*", "case_studies/figures/*"]
