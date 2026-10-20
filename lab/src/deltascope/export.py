@@ -28,13 +28,13 @@ def export_dataset(path,out):
     if out.exists():raise FileExistsError('Export destination already exists; choose a new directory')
     check_score_integrity(data,root)
     if any(s.get('status')=='stale' for r in data['records'] for s in r.get('scores',{}).values()):raise ValueError('Stale measurements: an image or reference set changed. Rescore before exporting.')
-    out.mkdir(parents=True);(out/'images').mkdir();public={k:data[k] for k in ['schema_version','id','title','description','baseline_condition','cases','metrics','lessons','default_columns','research_guide','deep_dive','method_library'] if k in data}
+    out.mkdir(parents=True);(out/'images').mkdir();public={k:data[k] for k in ['schema_version','id','title','description','baseline_condition','cases','metrics','lessons','default_columns','default_protocol','default_case','research_guide','deep_dive','method_library'] if k in data}
     public['cases']=[{k:c[k] for k in ['id','label','split','prompts','axis_labels'] if k in c} for c in data['cases']]
     public['metrics']=[{k:m[k] for k in ['id','label','description','higher_is_better','units','flag_threshold'] if k in m} for m in data['metrics']]
     public['conditions']=[{k:c[k] for k in ['id','label','description','color'] if k in c}|{'settings':settings(c.get('settings',{}))} for c in data['conditions']]
     for c,source in zip(public['conditions'],data['conditions']):
         c['about']={k:v for k,v in source.get('about',{}).items() if k in ['summary','steps','difference','observe','technical']}
-    public['protocols']=[{k:p[k] for k in ['id','label','description','matchable'] if k in p}|{'settings':settings(p.get('settings',{}))} for p in data['protocols']]
+    public['protocols']=[{k:p[k] for k in ['id','label','description','matchable','default_columns'] if k in p}|{'settings':settings(p.get('settings',{}))} for p in data['protocols']]
     public['records']=[]
     for r in data['records']:
         source=local_file(root,r['image']);name=digest(source)+'.jpg';target=out/'images'/name
