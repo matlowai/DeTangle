@@ -49,7 +49,7 @@ function wipe(){const value=Number($('#wipe-slider').value);$$('.wipe-b').forEac
 function table(headers,rows){return `<div class="table-scroll"><table><thead><tr>${headers.map(h=>`<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(v=>`<td>${esc(v)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;}
 function render(){
  $$('.view').forEach(v=>v.hidden=v.id!==state.tab);$$('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===state.tab));$$('[data-mode]').forEach(b=>b.classList.toggle('active',b.dataset.mode===state.mode));
- $('#case-select').innerHTML=data.cases.filter(c=>data.records.some(r=>r.case===c.id)).map(c=>option(c.id,c.label,state.case)).join('');
+ {const inCohort=new Set(data.records.filter(r=>r.protocol===state.protocol).map(r=>r.case)),shown=data.cases.filter(c=>data.records.some(r=>r.case===c.id)),other=shown.filter(c=>!inCohort.has(c.id));$('#case-select').innerHTML=`<optgroup class="in-cohort" label="In this cohort">${shown.filter(c=>inCohort.has(c.id)).map(c=>option(c.id,c.label,state.case)).join('')}</optgroup>`+(other.length?`<optgroup class="other-cohort" label="Other cohorts (switches cohort)">${other.map(c=>option(c.id,c.label,state.case)).join('')}</optgroup>`:'');}
  $('#protocol-control').hidden=data.protocols.length<2;$('#protocol-select').innerHTML=data.protocols.map(p=>option(p.id,p.label||p.id,state.protocol)).join('');
  $('#seed-select').innerHTML=[...new Set(data.records.filter(r=>r.case===state.case&&r.protocol===state.protocol).map(r=>String(r.seed)))].map(s=>option(s,s,state.seed)).join('');
  for(const selector of ['#metric-select','#summary-metric'])$(selector).innerHTML=data.metrics.map(m=>option(m.id,m.label,state.metric)).join('');
