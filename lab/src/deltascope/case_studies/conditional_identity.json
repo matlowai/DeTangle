@@ -928,6 +928,45 @@
       ]
     },
     {
+      "id": "krea2-turbo-8step-binding",
+      "label": "Group shots · binding · seeds 181905–181908",
+      "matchable": true,
+      "description": "Subject A with two other women or two male astronauts, triggered, across every variant (in-process pipeline renders, 1216×832). Does her identity stay on one face? (The scenes with Rebecca Ferguson and Noomi Rapace are reported as numbers in the lesson.)",
+      "settings": {
+        "model": "Krea 2 Turbo",
+        "width": 1216,
+        "height": 832,
+        "steps": 8,
+        "cfg": 1.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "precision": "FP8 scaled",
+        "seeds": "181905–181908"
+      },
+      "default_columns": [
+        {
+          "condition": "base",
+          "strength": 1.0
+        },
+        {
+          "condition": "naive",
+          "strength": 1.0
+        },
+        {
+          "condition": "repair",
+          "strength": 6.0
+        },
+        {
+          "condition": "style_dial",
+          "strength": 0.0
+        },
+        {
+          "condition": "style_dial_sched",
+          "strength": 6.0
+        }
+      ]
+    },
+    {
       "id": "krea2-turbo-8step-highlights",
       "label": "Highlights · astronaut · seeds 181905–181908",
       "matchable": true,
@@ -47853,6 +47892,1350 @@
           }
         }
       }
+    },
+    {
+      "id": "grp-group_cafe-target-base-100-181905",
+      "condition": "base",
+      "case": "group_cafe",
+      "axis": "target",
+      "seed": "181905",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman sitting at a cafe table between two other women, all three facing the camera with their faces clearly visible and in focus. Natural daylight, candid documentary photograph.",
+      "image": "images/grp-group_cafe-target-base-100-181905.jpg",
+      "sha256": "0f2c3ee89683c0beb4e329f56756313de382001561cbdcad8df9906e5736266e",
+      "native_image_sha256": "58e87f7f5f9237a9f9b7a62facafca28a5da9ab9bca2201c6311400f9da8d7d8",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.06530161947011948,
+          "status": "ok",
+          "details": {
+            "faces": 4
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_cafe-target-naive-100-181905",
+      "condition": "naive",
+      "case": "group_cafe",
+      "axis": "target",
+      "seed": "181905",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman sitting at a cafe table between two other women, all three facing the camera with their faces clearly visible and in focus. Natural daylight, candid documentary photograph.",
+      "image": "images/grp-group_cafe-target-naive-100-181905.jpg",
+      "sha256": "2cad8ec720bd7eaf2d6f9ec4b57da959a82c9e9ff19cefe634c5606d028bc104",
+      "native_image_sha256": "a8435ba9d054c54ee3cc006a067543dabe31a8fb03d0575aa182b32b076f73cf",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.7522141337394714,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_cafe-target-repair-600-181905",
+      "condition": "repair",
+      "case": "group_cafe",
+      "axis": "target",
+      "seed": "181905",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman sitting at a cafe table between two other women, all three facing the camera with their faces clearly visible and in focus. Natural daylight, candid documentary photograph.",
+      "image": "images/grp-group_cafe-target-repair-600-181905.jpg",
+      "sha256": "713cc7a8a89e0b13202487fe63634f7fdbbf13ad3bd8ea84c1c709da612fac5d",
+      "native_image_sha256": "ef07df1df14eb618d30f356bb73285b878c6dfc2b3568cd53f570ee344398e69",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.7388758659362793,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_cafe-target-style_dial-0-181905",
+      "condition": "style_dial",
+      "case": "group_cafe",
+      "axis": "target",
+      "seed": "181905",
+      "strength": 0.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman sitting at a cafe table between two other women, all three facing the camera with their faces clearly visible and in focus. Natural daylight, candid documentary photograph.",
+      "image": "images/grp-group_cafe-target-style_dial-0-181905.jpg",
+      "sha256": "354d5a3cb19f7add26aff231e81b87ba7f3283d4f5d2a0536d538f3b3e6c2ab4",
+      "native_image_sha256": "e1325e0cf1a89f1c5b3999e538533f15d67f675a89d0f3c93c3a4b2f2084ba6b",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.7255022525787354,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_cafe-target-style_dial-300-181905",
+      "condition": "style_dial",
+      "case": "group_cafe",
+      "axis": "target",
+      "seed": "181905",
+      "strength": 3.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman sitting at a cafe table between two other women, all three facing the camera with their faces clearly visible and in focus. Natural daylight, candid documentary photograph.",
+      "image": "images/grp-group_cafe-target-style_dial-300-181905.jpg",
+      "sha256": "dc0023ab18635e91e72969233b30a5f99f4c8947c124f83ef5a0ae42d9cde490",
+      "native_image_sha256": "53e2d6d7c3d8aa692a2370592a74689ea71d61e691f53cf5f1bc464ca0bc477a",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.7143501043319702,
+          "status": "ok",
+          "details": {
+            "faces": 4
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_cafe-target-style_dial_sched-600-181905",
+      "condition": "style_dial_sched",
+      "case": "group_cafe",
+      "axis": "target",
+      "seed": "181905",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman sitting at a cafe table between two other women, all three facing the camera with their faces clearly visible and in focus. Natural daylight, candid documentary photograph.",
+      "image": "images/grp-group_cafe-target-style_dial_sched-600-181905.jpg",
+      "sha256": "790b23d13ca3e7b0fd94b345ba16eec529ab7cb501a139c18c3de9431577bfe5",
+      "native_image_sha256": "ae61e7bfe329684a3e5652482c4f37c78f4a82443aff758f5199f12099fd2204",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.7379730939865112,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_cafe-target-style_dial_late-600-181905",
+      "condition": "style_dial_late",
+      "case": "group_cafe",
+      "axis": "target",
+      "seed": "181905",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman sitting at a cafe table between two other women, all three facing the camera with their faces clearly visible and in focus. Natural daylight, candid documentary photograph.",
+      "image": "images/grp-group_cafe-target-style_dial_late-600-181905.jpg",
+      "sha256": "dab76b7fdd838986da6e082fe896f72fa6d620bd7f74c4ed01a3d18a98978c47",
+      "native_image_sha256": "885d694d110feb508061ef1f75fa6e5350f431a2985d774e2a6d0cee2d2aed07",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.741662859916687,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_cafe-target-base-100-181906",
+      "condition": "base",
+      "case": "group_cafe",
+      "axis": "target",
+      "seed": "181906",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman sitting at a cafe table between two other women, all three facing the camera with their faces clearly visible and in focus. Natural daylight, candid documentary photograph.",
+      "image": "images/grp-group_cafe-target-base-100-181906.jpg",
+      "sha256": "b6a9b6d2880c32a8f629d22dc8f98bbb9069cf0a5612e2de0e207a48f4aeda4a",
+      "native_image_sha256": "a6610103a204abc2b2db6c9a4c3909bd58be5a909670553f6141c77f935efafc",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": -0.03270048648118973,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_cafe-target-naive-100-181906",
+      "condition": "naive",
+      "case": "group_cafe",
+      "axis": "target",
+      "seed": "181906",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman sitting at a cafe table between two other women, all three facing the camera with their faces clearly visible and in focus. Natural daylight, candid documentary photograph.",
+      "image": "images/grp-group_cafe-target-naive-100-181906.jpg",
+      "sha256": "a9d3a1a9e5fe9f4866373e6431b1f1df0c8ec7b13d238dad68be4e3653f6ef2c",
+      "native_image_sha256": "039378d9b71d7114633c726c0ec67ffe89abeb902f7f4f7ad9f3b6b035a73ae3",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.711073637008667,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_cafe-target-repair-600-181906",
+      "condition": "repair",
+      "case": "group_cafe",
+      "axis": "target",
+      "seed": "181906",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman sitting at a cafe table between two other women, all three facing the camera with their faces clearly visible and in focus. Natural daylight, candid documentary photograph.",
+      "image": "images/grp-group_cafe-target-repair-600-181906.jpg",
+      "sha256": "8258d4d30c9dc55838eb1a53b8563b1c8ef7003a1c9c57aa895ea161f37d6050",
+      "native_image_sha256": "fdd8c66a317bc7a9dd4abdd35cb2370e1c415b61526904c82629fc4299c8281e",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.7436076998710632,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_cafe-target-style_dial-0-181906",
+      "condition": "style_dial",
+      "case": "group_cafe",
+      "axis": "target",
+      "seed": "181906",
+      "strength": 0.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman sitting at a cafe table between two other women, all three facing the camera with their faces clearly visible and in focus. Natural daylight, candid documentary photograph.",
+      "image": "images/grp-group_cafe-target-style_dial-0-181906.jpg",
+      "sha256": "6a46b9bbaef2e08ab9b77e43b6e733520fafc201075beeea8b30b6973473ba1a",
+      "native_image_sha256": "ddad39fc52118d99927b61d0b27b228d40f1028cd69c58fc9f31ae32b66f59c4",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.6925327181816101,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_cafe-target-style_dial-300-181906",
+      "condition": "style_dial",
+      "case": "group_cafe",
+      "axis": "target",
+      "seed": "181906",
+      "strength": 3.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman sitting at a cafe table between two other women, all three facing the camera with their faces clearly visible and in focus. Natural daylight, candid documentary photograph.",
+      "image": "images/grp-group_cafe-target-style_dial-300-181906.jpg",
+      "sha256": "122335ec293fb0ce4bda60aa3820fadcfa22bb5c7a59a4e9bbbfb6bacffcf99b",
+      "native_image_sha256": "25ccc17917f8c84e93e7aaaccd848b50eee4887563fb896a165c76ebddc23043",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.7242709994316101,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_cafe-target-style_dial_sched-600-181906",
+      "condition": "style_dial_sched",
+      "case": "group_cafe",
+      "axis": "target",
+      "seed": "181906",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman sitting at a cafe table between two other women, all three facing the camera with their faces clearly visible and in focus. Natural daylight, candid documentary photograph.",
+      "image": "images/grp-group_cafe-target-style_dial_sched-600-181906.jpg",
+      "sha256": "33080272a21498e5d0c3d46a8ebb27ff4c333e7280f7ce94c5edd1f545e41b52",
+      "native_image_sha256": "70c36df71643b3e74dd7d16efaf2e4d4000c83cf2c0d0b2aca73fd0ef96ef9ed",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.6900107264518738,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_cafe-target-style_dial_late-600-181906",
+      "condition": "style_dial_late",
+      "case": "group_cafe",
+      "axis": "target",
+      "seed": "181906",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman sitting at a cafe table between two other women, all three facing the camera with their faces clearly visible and in focus. Natural daylight, candid documentary photograph.",
+      "image": "images/grp-group_cafe-target-style_dial_late-600-181906.jpg",
+      "sha256": "6c4839f6171f72ac801ff941e841ea5edb5ebe34e7acd8d369193e8201848eec",
+      "native_image_sha256": "be9290c5ffb01a348482873f2af96f489dd17de57e7cfd5ca46b2ddd440cd038",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.6920271515846252,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_cafe-target-base-100-181907",
+      "condition": "base",
+      "case": "group_cafe",
+      "axis": "target",
+      "seed": "181907",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman sitting at a cafe table between two other women, all three facing the camera with their faces clearly visible and in focus. Natural daylight, candid documentary photograph.",
+      "image": "images/grp-group_cafe-target-base-100-181907.jpg",
+      "sha256": "01fad2c95bc1dea1a2654ca75f2ed39bbff3c047c1617d5a1399165f995da3ff",
+      "native_image_sha256": "7442d622fe29aa151104c8ca08fcac883600d620a71d1cc233553e442743be56",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": -0.009766449220478535,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_cafe-target-naive-100-181907",
+      "condition": "naive",
+      "case": "group_cafe",
+      "axis": "target",
+      "seed": "181907",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman sitting at a cafe table between two other women, all three facing the camera with their faces clearly visible and in focus. Natural daylight, candid documentary photograph.",
+      "image": "images/grp-group_cafe-target-naive-100-181907.jpg",
+      "sha256": "5a025e43b4439f75bf4e4f82e5b20bf2f50377fecfff1a8fd1cde3a4ddfcf319",
+      "native_image_sha256": "523b3818f7eea231b58314a21a75d6e5f194be1f66e777403bb73ac5e1664192",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.7387155294418335,
+          "status": "ok",
+          "details": {
+            "faces": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_cafe-target-repair-600-181907",
+      "condition": "repair",
+      "case": "group_cafe",
+      "axis": "target",
+      "seed": "181907",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman sitting at a cafe table between two other women, all three facing the camera with their faces clearly visible and in focus. Natural daylight, candid documentary photograph.",
+      "image": "images/grp-group_cafe-target-repair-600-181907.jpg",
+      "sha256": "99704623afdffe5a8ea99eb1eb2001358e35130e314acadb9f05c4fc561650fa",
+      "native_image_sha256": "cd4ccd6cb368ba3f2db8e5741a9e4a1495d2389215108a5db47f1a10ea5777ae",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.7512011528015137,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_cafe-target-style_dial-0-181907",
+      "condition": "style_dial",
+      "case": "group_cafe",
+      "axis": "target",
+      "seed": "181907",
+      "strength": 0.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman sitting at a cafe table between two other women, all three facing the camera with their faces clearly visible and in focus. Natural daylight, candid documentary photograph.",
+      "image": "images/grp-group_cafe-target-style_dial-0-181907.jpg",
+      "sha256": "4315bdd33033e830b16975d0cd6983e822519169965e9cd128ffda5cfb102c0f",
+      "native_image_sha256": "e7feaac01af3c1a0a19bbcc0f1cfb45ad329e12e31ab19cc48eafdb207d93cbe",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.7035021781921387,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_cafe-target-style_dial-300-181907",
+      "condition": "style_dial",
+      "case": "group_cafe",
+      "axis": "target",
+      "seed": "181907",
+      "strength": 3.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman sitting at a cafe table between two other women, all three facing the camera with their faces clearly visible and in focus. Natural daylight, candid documentary photograph.",
+      "image": "images/grp-group_cafe-target-style_dial-300-181907.jpg",
+      "sha256": "98f44bd6bd625d3b0a5e2d18da3c09494b52c21f6aad0bafecb8bdaa679d25d4",
+      "native_image_sha256": "e4fed98010fe2ec7f1587dfe8f21559d577e701716286773e4e558d580dbd9af",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.732153058052063,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_cafe-target-style_dial_sched-600-181907",
+      "condition": "style_dial_sched",
+      "case": "group_cafe",
+      "axis": "target",
+      "seed": "181907",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman sitting at a cafe table between two other women, all three facing the camera with their faces clearly visible and in focus. Natural daylight, candid documentary photograph.",
+      "image": "images/grp-group_cafe-target-style_dial_sched-600-181907.jpg",
+      "sha256": "a3626817fef408d19844278d3a1563ffb2456963c7d326c584981654230c89a3",
+      "native_image_sha256": "947fac7eb87fdb5acb20ba224f6b2073ba39bae50665e654ab5a38e1e233f210",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.7254930734634399,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_cafe-target-style_dial_late-600-181907",
+      "condition": "style_dial_late",
+      "case": "group_cafe",
+      "axis": "target",
+      "seed": "181907",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman sitting at a cafe table between two other women, all three facing the camera with their faces clearly visible and in focus. Natural daylight, candid documentary photograph.",
+      "image": "images/grp-group_cafe-target-style_dial_late-600-181907.jpg",
+      "sha256": "2ac1e974f8b839ea75d3a60dfd9c801bab2836cdbc20b9e59df44741c43f59d2",
+      "native_image_sha256": "dae4f4b5ab6ac976adc7d7186e2f44878d2517a227ec80cacd2a2d9e55be2651",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.7173609733581543,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_cafe-target-base-100-181908",
+      "condition": "base",
+      "case": "group_cafe",
+      "axis": "target",
+      "seed": "181908",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman sitting at a cafe table between two other women, all three facing the camera with their faces clearly visible and in focus. Natural daylight, candid documentary photograph.",
+      "image": "images/grp-group_cafe-target-base-100-181908.jpg",
+      "sha256": "701ec70bf009e741f0e776278b35e5c60fde0bc750d235041e502cf511c1f9cf",
+      "native_image_sha256": "ac1e680c825fec24646f814a6ad2a7544e1861424e28f68e0d96462452fc608c",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": -0.03358323499560356,
+          "status": "ok",
+          "details": {
+            "faces": 4
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_cafe-target-naive-100-181908",
+      "condition": "naive",
+      "case": "group_cafe",
+      "axis": "target",
+      "seed": "181908",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman sitting at a cafe table between two other women, all three facing the camera with their faces clearly visible and in focus. Natural daylight, candid documentary photograph.",
+      "image": "images/grp-group_cafe-target-naive-100-181908.jpg",
+      "sha256": "f2ecdafc70a67472d64e5937876c070bbdc51dfe1418aac69c0b06d14863042b",
+      "native_image_sha256": "773db2ea2627e1f2b36882704fc13adf53f7588ea109f941852575f34e115448",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.70880126953125,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_cafe-target-repair-600-181908",
+      "condition": "repair",
+      "case": "group_cafe",
+      "axis": "target",
+      "seed": "181908",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman sitting at a cafe table between two other women, all three facing the camera with their faces clearly visible and in focus. Natural daylight, candid documentary photograph.",
+      "image": "images/grp-group_cafe-target-repair-600-181908.jpg",
+      "sha256": "72c7d5e24e24f4dbf1b8a0d73672acf5653f90e0e1c3f854299cd74eb6918928",
+      "native_image_sha256": "60bd7717a1788bf183279895787135e903754d7a003aa34301a5e6267060892f",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.7384767532348633,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_cafe-target-style_dial-0-181908",
+      "condition": "style_dial",
+      "case": "group_cafe",
+      "axis": "target",
+      "seed": "181908",
+      "strength": 0.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman sitting at a cafe table between two other women, all three facing the camera with their faces clearly visible and in focus. Natural daylight, candid documentary photograph.",
+      "image": "images/grp-group_cafe-target-style_dial-0-181908.jpg",
+      "sha256": "3d76ed043ac4ff9698715083a42827ca87336fad64f6a2e38410439c5ad941fe",
+      "native_image_sha256": "af799e6d776782cb09a6df9df2889505f86a571f26d5f1bfe9d346c2c78def7d",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.6890479326248169,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_cafe-target-style_dial-300-181908",
+      "condition": "style_dial",
+      "case": "group_cafe",
+      "axis": "target",
+      "seed": "181908",
+      "strength": 3.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman sitting at a cafe table between two other women, all three facing the camera with their faces clearly visible and in focus. Natural daylight, candid documentary photograph.",
+      "image": "images/grp-group_cafe-target-style_dial-300-181908.jpg",
+      "sha256": "a2d6fad723c563d187db802fdf79f35ea5b016e48507da65b844e8b8a20abcfd",
+      "native_image_sha256": "731ab7434820e6a34aec3115f103f7749142bc211de25d84e0b5f17524c6c01d",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.756170392036438,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_cafe-target-style_dial_sched-600-181908",
+      "condition": "style_dial_sched",
+      "case": "group_cafe",
+      "axis": "target",
+      "seed": "181908",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman sitting at a cafe table between two other women, all three facing the camera with their faces clearly visible and in focus. Natural daylight, candid documentary photograph.",
+      "image": "images/grp-group_cafe-target-style_dial_sched-600-181908.jpg",
+      "sha256": "d82e88ac217dca3058b60e617da99af3c573f1c81f112ad084769059f3b5a9fc",
+      "native_image_sha256": "3dc1d73a01fefaaecc15c07de0eec3b783e75ba990875fbe43cefc3125d3eaef",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.7197099924087524,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_cafe-target-style_dial_late-600-181908",
+      "condition": "style_dial_late",
+      "case": "group_cafe",
+      "axis": "target",
+      "seed": "181908",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman sitting at a cafe table between two other women, all three facing the camera with their faces clearly visible and in focus. Natural daylight, candid documentary photograph.",
+      "image": "images/grp-group_cafe-target-style_dial_late-600-181908.jpg",
+      "sha256": "abf65620c7d2727091383c82b96c57d6a64709e115e1f279bf80f545d1274395",
+      "native_image_sha256": "79615a174b8e7e980d3912b61c711bff0115ee2568912420b57fac82fb556cfc",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.6964836120605469,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_crew-target-base-100-181905",
+      "condition": "base",
+      "case": "group_crew",
+      "axis": "target",
+      "seed": "181905",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman in a silver flight suit standing between two other astronauts aboard a space station, all three facing the camera with their faces clearly visible and in focus. Photorealistic live-action science-fiction film still.",
+      "image": "images/grp-group_crew-target-base-100-181905.jpg",
+      "sha256": "87c6c1c83e39c795c351b30bc65aaf2bad064bd045ed18692f2c28652b831dcf",
+      "native_image_sha256": "e1626dc758065c7792ac7da928503267a14913e1aa6bc479795a670416e7ced0",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.016719020903110504,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_crew-target-naive-100-181905",
+      "condition": "naive",
+      "case": "group_crew",
+      "axis": "target",
+      "seed": "181905",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman in a silver flight suit standing between two other astronauts aboard a space station, all three facing the camera with their faces clearly visible and in focus. Photorealistic live-action science-fiction film still.",
+      "image": "images/grp-group_crew-target-naive-100-181905.jpg",
+      "sha256": "7ba376737d448ba1d28bd6122893966d79ff77ddb6a634b37250c539f6477a48",
+      "native_image_sha256": "b8fe7f3e38757180c2d77b8cab9e12e3e6743d7e622b65dbc24fbdbc57427432",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.674464225769043,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_crew-target-repair-600-181905",
+      "condition": "repair",
+      "case": "group_crew",
+      "axis": "target",
+      "seed": "181905",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman in a silver flight suit standing between two other astronauts aboard a space station, all three facing the camera with their faces clearly visible and in focus. Photorealistic live-action science-fiction film still.",
+      "image": "images/grp-group_crew-target-repair-600-181905.jpg",
+      "sha256": "d6be640b9e746312d919bdb1926d712e0a82199992ab5d51166cb7baf984112d",
+      "native_image_sha256": "1c7d8f3c8c0c472bf4d3c64ded7bd1c8c7f661829f52a1e848322d0928f98a86",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.45033034682273865,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_crew-target-style_dial-0-181905",
+      "condition": "style_dial",
+      "case": "group_crew",
+      "axis": "target",
+      "seed": "181905",
+      "strength": 0.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman in a silver flight suit standing between two other astronauts aboard a space station, all three facing the camera with their faces clearly visible and in focus. Photorealistic live-action science-fiction film still.",
+      "image": "images/grp-group_crew-target-style_dial-0-181905.jpg",
+      "sha256": "673e4e512a1d6c890ccd7934895401e7249ee707b108d39d17e59270487198c7",
+      "native_image_sha256": "194a2665f2b705b883135916ba461ca2658fc17fcebbd02c77107c0a55541693",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.2556688189506531,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_crew-target-style_dial-300-181905",
+      "condition": "style_dial",
+      "case": "group_crew",
+      "axis": "target",
+      "seed": "181905",
+      "strength": 3.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman in a silver flight suit standing between two other astronauts aboard a space station, all three facing the camera with their faces clearly visible and in focus. Photorealistic live-action science-fiction film still.",
+      "image": "images/grp-group_crew-target-style_dial-300-181905.jpg",
+      "sha256": "3acc0ffbf4f94ac5869d83ff66e33000ee67b2f94e7110f37e49883886a1d02e",
+      "native_image_sha256": "1db56a0c7b47994583e70e06896910912079da9317ffbfdcacc195afdb307baa",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.5394749641418457,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_crew-target-style_dial_sched-600-181905",
+      "condition": "style_dial_sched",
+      "case": "group_crew",
+      "axis": "target",
+      "seed": "181905",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman in a silver flight suit standing between two other astronauts aboard a space station, all three facing the camera with their faces clearly visible and in focus. Photorealistic live-action science-fiction film still.",
+      "image": "images/grp-group_crew-target-style_dial_sched-600-181905.jpg",
+      "sha256": "cfad5a4c9644f3119f23775563a9fca665a83c6409428095689d7ca09be0e672",
+      "native_image_sha256": "4c501545d82528bd8ee6674f3c3582ca11c086aa92ad91c20d9af349d212cd19",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.33447766304016113,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_crew-target-style_dial_late-600-181905",
+      "condition": "style_dial_late",
+      "case": "group_crew",
+      "axis": "target",
+      "seed": "181905",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman in a silver flight suit standing between two other astronauts aboard a space station, all three facing the camera with their faces clearly visible and in focus. Photorealistic live-action science-fiction film still.",
+      "image": "images/grp-group_crew-target-style_dial_late-600-181905.jpg",
+      "sha256": "f7355742665302e5af4a74d5400e7aa11e85501fc6adee56e1e146372b5a8af4",
+      "native_image_sha256": "05f3980caddfdc25d7acdd486ee228b1b827afa215d78183a3d8ce7c5e7ee96b",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.31402379274368286,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_crew-target-base-100-181906",
+      "condition": "base",
+      "case": "group_crew",
+      "axis": "target",
+      "seed": "181906",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman in a silver flight suit standing between two other astronauts aboard a space station, all three facing the camera with their faces clearly visible and in focus. Photorealistic live-action science-fiction film still.",
+      "image": "images/grp-group_crew-target-base-100-181906.jpg",
+      "sha256": "16c805164d706577da7523626759cb96f7114f0deed20b1e6faebee233bd51e2",
+      "native_image_sha256": "9d06facdd7c3a3aed680f042d9333d24da8fbc95e9686f91c60159d2b1ebfbf9",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": -0.0032371599227190018,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_crew-target-naive-100-181906",
+      "condition": "naive",
+      "case": "group_crew",
+      "axis": "target",
+      "seed": "181906",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman in a silver flight suit standing between two other astronauts aboard a space station, all three facing the camera with their faces clearly visible and in focus. Photorealistic live-action science-fiction film still.",
+      "image": "images/grp-group_crew-target-naive-100-181906.jpg",
+      "sha256": "d54949625b812c9b7c93d0aec1f9f2bb57b80f56fc47fada6d8a760e4a1cab5d",
+      "native_image_sha256": "848d74b137ca177606bb9416f4ec6805dd4f2ecd318069b1ca6049344a5c77b0",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.691298246383667,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_crew-target-repair-600-181906",
+      "condition": "repair",
+      "case": "group_crew",
+      "axis": "target",
+      "seed": "181906",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman in a silver flight suit standing between two other astronauts aboard a space station, all three facing the camera with their faces clearly visible and in focus. Photorealistic live-action science-fiction film still.",
+      "image": "images/grp-group_crew-target-repair-600-181906.jpg",
+      "sha256": "8abe39161b7591ddd4183e002ba536311b8e495226a7b15fdbf920729ee5d592",
+      "native_image_sha256": "dc3af5b6d1d18bc4b63cac7eb3c831673c0b5272e156ede03f4b51d1a3f8f773",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.510354220867157,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_crew-target-style_dial-0-181906",
+      "condition": "style_dial",
+      "case": "group_crew",
+      "axis": "target",
+      "seed": "181906",
+      "strength": 0.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman in a silver flight suit standing between two other astronauts aboard a space station, all three facing the camera with their faces clearly visible and in focus. Photorealistic live-action science-fiction film still.",
+      "image": "images/grp-group_crew-target-style_dial-0-181906.jpg",
+      "sha256": "5a173e2111ea1a52bf1b9d6fb46d6eb8a7e00f9f9c90f4d415051216301e0a40",
+      "native_image_sha256": "d9381b4dcf8f913eefe198b2ff28e9af14c296f5c10d2d018d4871de550b7f25",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.3409721851348877,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_crew-target-style_dial-300-181906",
+      "condition": "style_dial",
+      "case": "group_crew",
+      "axis": "target",
+      "seed": "181906",
+      "strength": 3.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman in a silver flight suit standing between two other astronauts aboard a space station, all three facing the camera with their faces clearly visible and in focus. Photorealistic live-action science-fiction film still.",
+      "image": "images/grp-group_crew-target-style_dial-300-181906.jpg",
+      "sha256": "4814f13bbbb5351d507e30a1cbe78fb824f3182656610507049a926ad5cb73cf",
+      "native_image_sha256": "8f83b512b7e19d57b931da73510a735e20e7a5261dd77d101cb03ff9df51dee2",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.44650962948799133,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_crew-target-style_dial_sched-600-181906",
+      "condition": "style_dial_sched",
+      "case": "group_crew",
+      "axis": "target",
+      "seed": "181906",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman in a silver flight suit standing between two other astronauts aboard a space station, all three facing the camera with their faces clearly visible and in focus. Photorealistic live-action science-fiction film still.",
+      "image": "images/grp-group_crew-target-style_dial_sched-600-181906.jpg",
+      "sha256": "6617329481b8cefda76f11b4fe58918c56a15369c1ba650f66522418e53b1521",
+      "native_image_sha256": "fadfddb2c927f5322101fa158809a516b0930d155a7ad5667dd0aaf95f204dcc",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.6772537231445312,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_crew-target-style_dial_late-600-181906",
+      "condition": "style_dial_late",
+      "case": "group_crew",
+      "axis": "target",
+      "seed": "181906",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman in a silver flight suit standing between two other astronauts aboard a space station, all three facing the camera with their faces clearly visible and in focus. Photorealistic live-action science-fiction film still.",
+      "image": "images/grp-group_crew-target-style_dial_late-600-181906.jpg",
+      "sha256": "f95721f3cdcbe11ff63f26c7ec685eabaa76a7131472747321a322bf580ab017",
+      "native_image_sha256": "53edc812259c072285e7fd7902d8bbe4147060988cf360ad83fc3ce1280646a1",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.3931765556335449,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_crew-target-base-100-181907",
+      "condition": "base",
+      "case": "group_crew",
+      "axis": "target",
+      "seed": "181907",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman in a silver flight suit standing between two other astronauts aboard a space station, all three facing the camera with their faces clearly visible and in focus. Photorealistic live-action science-fiction film still.",
+      "image": "images/grp-group_crew-target-base-100-181907.jpg",
+      "sha256": "c2cc7b6c92fd86378a49736b263d253a7e5ddffe20710674a4b5f2be0bc51f2d",
+      "native_image_sha256": "afb36d3681f038f5e585dabc44116a7a091f2e958d8b602771d442cb7cfadf2d",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": -0.021515632048249245,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_crew-target-naive-100-181907",
+      "condition": "naive",
+      "case": "group_crew",
+      "axis": "target",
+      "seed": "181907",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman in a silver flight suit standing between two other astronauts aboard a space station, all three facing the camera with their faces clearly visible and in focus. Photorealistic live-action science-fiction film still.",
+      "image": "images/grp-group_crew-target-naive-100-181907.jpg",
+      "sha256": "ccf8defa92e227005706ed20a139158507add8513a5adeb5c6f45289607d1ffc",
+      "native_image_sha256": "6c9d6ad921f575373bbbb8e605a8a505808f4b6360c724b77a29ca95ab80880a",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.6802372336387634,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_crew-target-repair-600-181907",
+      "condition": "repair",
+      "case": "group_crew",
+      "axis": "target",
+      "seed": "181907",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman in a silver flight suit standing between two other astronauts aboard a space station, all three facing the camera with their faces clearly visible and in focus. Photorealistic live-action science-fiction film still.",
+      "image": "images/grp-group_crew-target-repair-600-181907.jpg",
+      "sha256": "4543aef231859d9ec91f9aa83116fa459bd600c6508479f0a30e3cfa7e515c64",
+      "native_image_sha256": "83fcf79fe0715c0f9034a42c4a62f5511d4e41a0bf1e70a942fb3c84d210ec3e",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.4790394902229309,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_crew-target-style_dial-0-181907",
+      "condition": "style_dial",
+      "case": "group_crew",
+      "axis": "target",
+      "seed": "181907",
+      "strength": 0.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman in a silver flight suit standing between two other astronauts aboard a space station, all three facing the camera with their faces clearly visible and in focus. Photorealistic live-action science-fiction film still.",
+      "image": "images/grp-group_crew-target-style_dial-0-181907.jpg",
+      "sha256": "4d1ef50f3676a318be50c7550fc62120994d61be36fd1811019a8972e43094ab",
+      "native_image_sha256": "2ae9841433f636d6ba81f600d550ba18f455a9accd72bc107dd73a7a2a80055c",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.6244860887527466,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_crew-target-style_dial-300-181907",
+      "condition": "style_dial",
+      "case": "group_crew",
+      "axis": "target",
+      "seed": "181907",
+      "strength": 3.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman in a silver flight suit standing between two other astronauts aboard a space station, all three facing the camera with their faces clearly visible and in focus. Photorealistic live-action science-fiction film still.",
+      "image": "images/grp-group_crew-target-style_dial-300-181907.jpg",
+      "sha256": "12aa8a208900ba800e23027bfb7cb63668232a6771f860c16ef097a821a37c35",
+      "native_image_sha256": "f78fdeaebc1a492d545ab412a7eded6bf828e43edd7d88d9c94af845744457db",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.44402170181274414,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_crew-target-style_dial_sched-600-181907",
+      "condition": "style_dial_sched",
+      "case": "group_crew",
+      "axis": "target",
+      "seed": "181907",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman in a silver flight suit standing between two other astronauts aboard a space station, all three facing the camera with their faces clearly visible and in focus. Photorealistic live-action science-fiction film still.",
+      "image": "images/grp-group_crew-target-style_dial_sched-600-181907.jpg",
+      "sha256": "459ed25a138665d52e05fe3d425cea7f270e384c73c7b4bfa10b0e95482494a8",
+      "native_image_sha256": "1f2824ebe02d5281b045acc06609cc764460fe144ca34ca9847ad63a96e9ccda",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.6793456673622131,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_crew-target-style_dial_late-600-181907",
+      "condition": "style_dial_late",
+      "case": "group_crew",
+      "axis": "target",
+      "seed": "181907",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman in a silver flight suit standing between two other astronauts aboard a space station, all three facing the camera with their faces clearly visible and in focus. Photorealistic live-action science-fiction film still.",
+      "image": "images/grp-group_crew-target-style_dial_late-600-181907.jpg",
+      "sha256": "f5e6ccc589622fec3b89e17281d6c87093772983e867f0d26233581ac6540c87",
+      "native_image_sha256": "b2840f7c72f13e5a46843ce8c3f950b9fcbdff1dd61061e072d1640b4a59673b",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.6735507845878601,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_crew-target-base-100-181908",
+      "condition": "base",
+      "case": "group_crew",
+      "axis": "target",
+      "seed": "181908",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman in a silver flight suit standing between two other astronauts aboard a space station, all three facing the camera with their faces clearly visible and in focus. Photorealistic live-action science-fiction film still.",
+      "image": "images/grp-group_crew-target-base-100-181908.jpg",
+      "sha256": "8532d90fbdfc3112a155283fcecc905d4473ef9093342fcee204b510a6ff971d",
+      "native_image_sha256": "121cb287618d47a6b4d2395be710f4c46287bba9f729a0df2b7036c34b9d6a37",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": -0.06438230723142624,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_crew-target-naive-100-181908",
+      "condition": "naive",
+      "case": "group_crew",
+      "axis": "target",
+      "seed": "181908",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman in a silver flight suit standing between two other astronauts aboard a space station, all three facing the camera with their faces clearly visible and in focus. Photorealistic live-action science-fiction film still.",
+      "image": "images/grp-group_crew-target-naive-100-181908.jpg",
+      "sha256": "8c93442ea97c7d5d5b1a6e1ec4cda4450e8e2abce5d28c4159fbb09c779f654e",
+      "native_image_sha256": "316c39b89d6449868243f0ff494eaedf9f908555bae6f3f69703ea2cd598084f",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.6721624135971069,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_crew-target-repair-600-181908",
+      "condition": "repair",
+      "case": "group_crew",
+      "axis": "target",
+      "seed": "181908",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman in a silver flight suit standing between two other astronauts aboard a space station, all three facing the camera with their faces clearly visible and in focus. Photorealistic live-action science-fiction film still.",
+      "image": "images/grp-group_crew-target-repair-600-181908.jpg",
+      "sha256": "e94a45b175a158d06c01758d019eed0bf566ed29cb146ce6c8af8f1fd1969f6d",
+      "native_image_sha256": "7c8eee0df974771b060559e9640cf1a583044067aef23095a450fce1cfe40023",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.3634560704231262,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_crew-target-style_dial-0-181908",
+      "condition": "style_dial",
+      "case": "group_crew",
+      "axis": "target",
+      "seed": "181908",
+      "strength": 0.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman in a silver flight suit standing between two other astronauts aboard a space station, all three facing the camera with their faces clearly visible and in focus. Photorealistic live-action science-fiction film still.",
+      "image": "images/grp-group_crew-target-style_dial-0-181908.jpg",
+      "sha256": "9207ca14baf1cba792487dd605df1ca04bce60972c39bff8aa6b3dc7316659e0",
+      "native_image_sha256": "63cdf498bc12e5788dba78d5472af34613b462309d499237ec52587fc0adad91",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.280042827129364,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_crew-target-style_dial-300-181908",
+      "condition": "style_dial",
+      "case": "group_crew",
+      "axis": "target",
+      "seed": "181908",
+      "strength": 3.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman in a silver flight suit standing between two other astronauts aboard a space station, all three facing the camera with their faces clearly visible and in focus. Photorealistic live-action science-fiction film still.",
+      "image": "images/grp-group_crew-target-style_dial-300-181908.jpg",
+      "sha256": "c24d943291b8e0fed023921765a594579beb4a60d6fd43216239ba2695f3d03e",
+      "native_image_sha256": "14ff23e8e2a5fba81f05682b3553a7f8fbf622fd2cfe944f76bc84ea6c42566a",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.3824801445007324,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_crew-target-style_dial_sched-600-181908",
+      "condition": "style_dial_sched",
+      "case": "group_crew",
+      "axis": "target",
+      "seed": "181908",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman in a silver flight suit standing between two other astronauts aboard a space station, all three facing the camera with their faces clearly visible and in focus. Photorealistic live-action science-fiction film still.",
+      "image": "images/grp-group_crew-target-style_dial_sched-600-181908.jpg",
+      "sha256": "2e269252b1a40b527ec6e219410b8a0af1ea12f90d02c1cab5c02695cf71a891",
+      "native_image_sha256": "279a790042487d00ccbb23254854bed5dac3ee5bf62dd47f5a71544c1adcf76d",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.40018075704574585,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "grp-group_crew-target-style_dial_late-600-181908",
+      "condition": "style_dial_late",
+      "case": "group_crew",
+      "axis": "target",
+      "seed": "181908",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-binding",
+      "prompt": "rlsa, A medium photograph of a woman in a silver flight suit standing between two other astronauts aboard a space station, all three facing the camera with their faces clearly visible and in focus. Photorealistic live-action science-fiction film still.",
+      "image": "images/grp-group_crew-target-style_dial_late-600-181908.jpg",
+      "sha256": "162c3a4b4bc7bdbf307526416ae5d0704bb82d26f08fde0e12920a146672f528",
+      "native_image_sha256": "ceba3085b26a341cdddf9fa30ba500852ad851533c21ba30185fd39e73ab7105",
+      "width": 608,
+      "height": 416,
+      "scores": {
+        "face_similarity": {
+          "value": 0.3274340033531189,
+          "status": "ok",
+          "details": {
+            "faces": 3
+          }
+        }
+      }
     }
   ],
   "lessons": [
@@ -48490,6 +49873,7 @@
       "sections": [
         {
           "title": "Fixed edits hit a frontier",
+          "figure": "exchange-rate",
           "body": "We scored 20 candidate components of the amplifier's conditioning change (principal directions, the style dial, identity subspaces, four random-direction controls) by their average effect over 64 render contexts, then searched for the best combination that adds likeness without adding snapshot look or losing scene. On six held-out genres with fresh seeds, that optimum did not beat the plain style dial: every fixed edit paid in look, in scene, or both. Gradients through the 8-step sampler were checked against finite differences: they are correct in the late steps but jump from seed to seed in the early ones, so components were scored by averaging real renders instead. Small-dose measurements also misled: one component (snapshot↔cinematic directions with the shared-context part removed) looked like pure identity at ±0.2 (likeness up, look and scene unchanged) but at a practical dose of 2 it added snapshot look and moved the scene like the others. Scoring candidate directions with gradients and reweighting them is itself established (e.g. Spectral Surgery, 2026, for LoRA singular directions); what is new here is the controlled specificity test and the timing result below.",
           "table": {
             "headers": [
@@ -48635,6 +50019,84 @@
       "takeaways": [
         "Audit what the fit data covers before inventing a new solver: coverage fixed a failure no objective change had.",
         "Every extra source can move some untriggered prompt; keep a broad bleed panel and attribute leaks before pruning."
+      ]
+    },
+    {
+      "id": "names-bind",
+      "kind": "BINDING",
+      "added": "2026-10-21",
+      "title": "Names bind to one face; the trigger does not",
+      "case": "group_cafe",
+      "protocol": "krea2-turbo-8step-binding",
+      "summary": "Put Subject A in a photo with other people and every adapter variant gives the others her face, men included. The base model already knows how to keep two named people apart: specific attention heads send each face to its own name. Those heads ignore the trigger word, so her identity arrives everywhere at once instead of through that channel.",
+      "sections": [
+        {
+          "title": "What happens in a group shot",
+          "body": "Four scenes, four held-out seeds each, seven variants. Strangers count as 'turned into her' at a face likeness of 0.35 or more.",
+          "table": {
+            "headers": [
+              "Scene",
+              "Other faces turned into her",
+              "Notes"
+            ],
+            "rows": [
+              [
+                "Cafe, two other women",
+                "8/8 in every variant",
+                "the strangers score as high as she does (0.60–0.72)"
+              ],
+              [
+                "Space crew, two male astronauts",
+                "repair 8/8 · steps 3–7 7/8 · style 0 3/8 · original LoRA 1/8",
+                "the repair spills onto men more than the original"
+              ],
+              [
+                "Next to Rebecca Ferguson",
+                "about 1 per seed",
+                "Ferguson becomes a hybrid of the two"
+              ],
+              [
+                "Next to Noomi Rapace",
+                "0 with the repair · 4/4 with the original LoRA",
+                "Rapace keeps her face in every repair variant"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "Where identity lives",
+          "figure": "identity-map",
+          "body": "We recorded what each face's image tokens hold at six depths of the network for twelve celebrities, generic 30- and 60-year-old women, and Subject A. From layer 12 on, every celebrity is identifiable from its face alone (100 %), separately from age. Subject A's identity points the same way in every render, but only 1–3 % of it lies in the directions the model uses to tell celebrities apart: the adapter built her a private axis."
+        },
+        {
+          "title": "Two parts make her",
+          "figure": "token-routing",
+          "body": "In this single-stream model, words and image share the same layers, so the adapter's weights act on both. Applying them only to the words, or only to the image, loses her almost completely. The image-side weights draw her face only where the trigger's signal arrives, and that signal reaches every face."
+        },
+        {
+          "title": "How a name talks, and how the trigger talks",
+          "figure": "named-person",
+          "body": "Across 40 actresses, a name changes the text conditioning in a shared 'specific person' way, both on the name itself and on the rest of the sentence. The trigger only half matches that signature, pushes the rest of the sentence the opposite way, and is about seven times louder."
+        },
+        {
+          "title": "The heads that bind names to faces",
+          "figure": "binding-heads",
+          "body": "We recomputed every attention head's weights for the face regions. In photos of two celebrities, all twelve renders drew both people correctly, and a set of heads in layers 7–11 sends each face to its own name (the best one, layer 9 head 15, scores 0.86 own minus other). In those heads a celebrity's face gives its own name about 0.67 of its attention; faces give the trigger word only 0.01–0.03. In 'rlsa sitting on a chair while a different woman stands behind her', the other face does attend to 'a different woman', and still renders as her."
+        },
+        {
+          "title": "Her direction in other faces",
+          "figure": "her-direction-spill",
+          "body": "The clone is visible inside the network: in group shots the other faces carry her identity direction, as strongly as she does in the cafe and least next to Rapace. Removing it from the other faces late in sampling, with face positions given by hand, lowers their likeness by a third to a half without touching hers, but only a little visibly: age, hair and build were already decided in the first steps. That test used hand-placed masks and is a diagnostic, not a fix."
+        },
+        {
+          "title": "What we will try next",
+          "body": "Make the trigger look like a name to the model: a celebrity-sized text signal carrying the shared named-person signature, read by the layer 7–11 binding heads, with her identity in what those heads pass on. If that works, a sentence like 'rlsa sitting on a chair while a different woman stands behind her' should bind on its own, with no masks."
+        }
+      ],
+      "takeaways": [
+        "A trained identity can work for one person in the frame and still fail the moment a second face appears; test group shots with named and unnamed strangers.",
+        "The base model's own name-binding machinery is the target to reach, not a mask to add.",
+        "Measure inside the network (identity directions, attention heads) before editing, and check it against what the images show."
       ]
     }
   ],
@@ -49280,6 +50742,36 @@
       "image": "figures/exchange-rate.png",
       "caption": "Likeness gain against snapshot-look change (left) and scene change (right) for fixed text-side components at doses ×1–×3, averaged over 16 contexts. The strong directions share the style dial's curve; directions without snapshot cost pay in scene at higher doses.",
       "sha256": "3afab1a71069cf23824c22ae08ce4d8ddc5a6a3fdf306449da001da63401cb5a"
+    },
+    {
+      "id": "identity-map",
+      "image": "figures/identity-map.png",
+      "caption": "Each dot is one generated face, from its image-token activations (face minus image average). Right, deep and late: older and younger celebrities separate, generic women sit between them, and Subject A forms her own island along the second axis.",
+      "sha256": "8b58fee1064f4d7c6034db66bfb0e78150a403c7d9666501a1a59e483aead390"
+    },
+    {
+      "id": "token-routing",
+      "image": "figures/token-routing.png",
+      "caption": "The adapter's block weights applied only to the prompt's word tokens (orange), only to the image tokens (green), or to both (blue). Neither half produces her face alone.",
+      "sha256": "a19c61b603bd4679de8a1e06a4fd2c2eff465bfdc09c2c283564d8be45b2e920"
+    },
+    {
+      "id": "named-person",
+      "image": "figures/named-person.png",
+      "caption": "Left: celebrity names share a 'named person' signature on their own words and on the rest of the sentence; rlsa only half matches and leaves the opposite pattern on the sentence. Right: rlsa is about seven times louder.",
+      "sha256": "50b0ff84a5555b78d9bb0de3422cb95c8d60063dfb8df81cc76a75eee2516f12"
+    },
+    {
+      "id": "binding-heads",
+      "image": "figures/binding-heads.png",
+      "caption": "Left: per layer, the attention head that best sends each face to its own name (two-celebrity photos). Right: in the ten strongest of those heads, how much her face and the other faces attend to the word 'rlsa'; a celebrity's face gives its own name about 0.67.",
+      "sha256": "cec40e68259996adecaf77c1d8df9db59743bcd41250fcba3b63f502c0aa2786"
+    },
+    {
+      "id": "her-direction-spill",
+      "image": "figures/her-direction-spill.png",
+      "caption": "How much of her identity direction each face carries in a group shot (one layer, last step): in Base nobody carries it; with the repair, the other faces carry as much as she does in the cafe and least next to Noomi Rapace.",
+      "sha256": "a45d329e12b47421abcc3593feb41b84bf488839f7ff76fbec7f903c6a6e775c"
     }
   ],
   "deep_dive": {
