@@ -928,6 +928,49 @@
       ]
     },
     {
+      "id": "krea2-turbo-8step-highlights",
+      "label": "Highlights · astronaut · seeds 181905–181908",
+      "matchable": true,
+      "description": "Every headline condition on the space-station prompt, rendered through one path (the study's in-process pipeline, same model, adapters, sampler and seeds as the render server; LoRA patches baked into fp8 weights, so pixels differ slightly from server renders): the original LoRA, A-side surgery, the repair, the style dial at 0 and 3, the style dial applied only on sampling steps 3–7, and Base.",
+      "settings": {
+        "model": "Krea 2 Turbo",
+        "width": 832,
+        "height": 1216,
+        "steps": 8,
+        "cfg": 1.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "precision": "FP8 scaled",
+        "seeds": "181905–181908"
+      },
+      "default_columns": [
+        {
+          "condition": "naive",
+          "strength": 1.0
+        },
+        {
+          "condition": "a_side",
+          "strength": 1.0
+        },
+        {
+          "condition": "repair",
+          "strength": 6.0
+        },
+        {
+          "condition": "style_dial",
+          "strength": 0.0
+        },
+        {
+          "condition": "style_dial_sched",
+          "strength": 6.0
+        },
+        {
+          "condition": "base",
+          "strength": 1.0
+        }
+      ]
+    },
+    {
       "id": "krea2-turbo-8step-schedule",
       "label": "Time-scheduled style dial · held-out genres · seeds 181905–181906",
       "matchable": true,
@@ -1016,7 +1059,7 @@
       "strength": 1
     }
   ],
-  "default_protocol": "krea2-turbo-8step-fresh",
+  "default_protocol": "krea2-turbo-8step-highlights",
   "default_case": "space_station",
   "records": [
     {
@@ -41084,6 +41127,1254 @@
       "scores": {
         "face_similarity": {
           "value": -0.06327514350414276,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-generic-base-100-181905",
+      "condition": "base",
+      "case": "space_station",
+      "axis": "generic",
+      "seed": "181905",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-generic-base-100-181905.jpg",
+      "sha256": "f091fc0e2ee5882e2d7b05e9eb2019e9e9f265a76074634a189ede41e334f355",
+      "native_image_sha256": "b87094d80bf158b4888f00dd9e8f58306228151f7329228f906d1d35a92e1f3b",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": -0.030077403411269188,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-target-naive-100-181905",
+      "condition": "naive",
+      "case": "space_station",
+      "axis": "target",
+      "seed": "181905",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "rlsa, A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-target-naive-100-181905.jpg",
+      "sha256": "619639eb5c5d228647bce9bf142172f91b9862f891f2dc51284c4dff0cd94f04",
+      "native_image_sha256": "fa77f3d8f24e6550a3d047bd11ff88c4942059d6ef8633129f51c54d73b43fa1",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": 0.7006332874298096,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-generic-naive-100-181905",
+      "condition": "naive",
+      "case": "space_station",
+      "axis": "generic",
+      "seed": "181905",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-generic-naive-100-181905.jpg",
+      "sha256": "56d070789c0bff7c61b0649130b58b55fc1887d45cf84b91b14e6a7aff840472",
+      "native_image_sha256": "d3d905342e50908628416d9e8fb5567c51e03a0378e0f1aa06c36c53efa55655",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": 0.6332122683525085,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-target-a_side-100-181905",
+      "condition": "a_side",
+      "case": "space_station",
+      "axis": "target",
+      "seed": "181905",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "rlsa, A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-target-a_side-100-181905.jpg",
+      "sha256": "fe462631d44941f55fd6d2bee7d61b50f4b2085dab3ad0b50d7ee02830d2237d",
+      "native_image_sha256": "ba53582b5ff4f9cb57c09ed7aa05b22ed74e5dfe8705d390355694e31ffe3e93",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": 0.015404787845909595,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-generic-a_side-100-181905",
+      "condition": "a_side",
+      "case": "space_station",
+      "axis": "generic",
+      "seed": "181905",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-generic-a_side-100-181905.jpg",
+      "sha256": "223f1a950539e9661735f516354238ef680cdde46d65a6084b73d987668cea98",
+      "native_image_sha256": "ca85d61a2ed64aa7039c3196527d2d13249282947f19f5ec0c7d4cef95cf34bd",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": -0.07890748977661133,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-target-repair-600-181905",
+      "condition": "repair",
+      "case": "space_station",
+      "axis": "target",
+      "seed": "181905",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "rlsa, A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-target-repair-600-181905.jpg",
+      "sha256": "fe33e34b641b93412bfe0296915e23385eebb0a309ecdac13a956265141d38e7",
+      "native_image_sha256": "2016eb95c067afeb623fcdbd6db75b167b3a766f92827279d2e53a35a8160b88",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": 0.6360311508178711,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-generic-repair-600-181905",
+      "condition": "repair",
+      "case": "space_station",
+      "axis": "generic",
+      "seed": "181905",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-generic-repair-600-181905.jpg",
+      "sha256": "584f12132eb011d0810232bbb58d3ddbd69ecca657a67a84ff4ce6dcc6c2c4ec",
+      "native_image_sha256": "afb3695de42ed50d5dbf6c41a561999707818855136766456dfdc358eacabd19",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": -0.007927414029836655,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-target-style_dial-0-181905",
+      "condition": "style_dial",
+      "case": "space_station",
+      "axis": "target",
+      "seed": "181905",
+      "strength": 0.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "rlsa, A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-target-style_dial-0-181905.jpg",
+      "sha256": "8a3e7b9e7462751bc5782827a32d8e71fa1d43fcbc8faaf08226be3b8bc5e0a6",
+      "native_image_sha256": "7cdd779fa9f6cacdd3e0e8108fb0832f720513b99c1967a91240590f172f7ced",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": 0.39216071367263794,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-generic-style_dial-0-181905",
+      "condition": "style_dial",
+      "case": "space_station",
+      "axis": "generic",
+      "seed": "181905",
+      "strength": 0.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-generic-style_dial-0-181905.jpg",
+      "sha256": "89ca54c4adc15ac44ed780c2e45ba68a7916f1a85fde4ef3f2abfeb7603d3db4",
+      "native_image_sha256": "b133c5cffcef953eaf20bb6f5c6dc3606e342f12b1ba4c0fe55e883a08d131a0",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": 0.013733569532632828,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-target-style_dial-300-181905",
+      "condition": "style_dial",
+      "case": "space_station",
+      "axis": "target",
+      "seed": "181905",
+      "strength": 3.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "rlsa, A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-target-style_dial-300-181905.jpg",
+      "sha256": "87c5c93f7987334e5eb44d89bbb6f25d6195319710e08ce45b22d84d92d32f28",
+      "native_image_sha256": "a20fee38e873cdbc78bde120098111e16e43baa81c64b25396d9287b0e769b41",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": 0.5341023206710815,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-generic-style_dial-300-181905",
+      "condition": "style_dial",
+      "case": "space_station",
+      "axis": "generic",
+      "seed": "181905",
+      "strength": 3.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-generic-style_dial-300-181905.jpg",
+      "sha256": "3731e123c27a43277bf1318f0f445c4d294932ed13d5ed680281a84de04fb48e",
+      "native_image_sha256": "76ca80082c22b807ee9e756adde41dcc25ef45f07a8f03459a559929a16139ad",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": 0.01012403517961502,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-target-style_dial_sched-600-181905",
+      "condition": "style_dial_sched",
+      "case": "space_station",
+      "axis": "target",
+      "seed": "181905",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "rlsa, A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-target-style_dial_sched-600-181905.jpg",
+      "sha256": "6ed605119fa40daccef4a855ef786ad6c71713eb7b3cf6401f5f4c741f7148c9",
+      "native_image_sha256": "414c170f824b94376297963465449fcc7c8913215c4f868c1286d4a341a7f09e",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": 0.534484326839447,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-generic-style_dial_sched-600-181905",
+      "condition": "style_dial_sched",
+      "case": "space_station",
+      "axis": "generic",
+      "seed": "181905",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-generic-style_dial_sched-600-181905.jpg",
+      "sha256": "246e4023852913cc5edd122c2c44ac60a3f8af91c307f1a67a4b9cd92285c02a",
+      "native_image_sha256": "bd2f5df699ef794d2ed4f617947c2582ee6a9a81df64f5136125cea5dcc926c1",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": 0.006183259189128876,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-generic-base-100-181906",
+      "condition": "base",
+      "case": "space_station",
+      "axis": "generic",
+      "seed": "181906",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-generic-base-100-181906.jpg",
+      "sha256": "45e4df89f2d61e15648cdd1dcda5ebcdd836f8d30fcbe11cb373b65a65ec64f3",
+      "native_image_sha256": "d89ec661a9ab19df474b6ff0ed1645ccbd55210a9ce77ee9c44f6597baef5af2",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": -0.030983589589595795,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-target-naive-100-181906",
+      "condition": "naive",
+      "case": "space_station",
+      "axis": "target",
+      "seed": "181906",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "rlsa, A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-target-naive-100-181906.jpg",
+      "sha256": "5037705ce96b8525e8a4bae9de9cfcb75b48f6a31cf7d55c2838aa5d120f84b7",
+      "native_image_sha256": "772e5573fe0feed3269ad07bb111b5820bd2af150f03694248fe34b7e1174f13",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": 0.6719410419464111,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-generic-naive-100-181906",
+      "condition": "naive",
+      "case": "space_station",
+      "axis": "generic",
+      "seed": "181906",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-generic-naive-100-181906.jpg",
+      "sha256": "da6bfebb84a728e92699d30e6706d1748251b1cc2f13e2a6fffeb69faa7a6ecc",
+      "native_image_sha256": "893b4140b63a3d7652e118b14e60f9efac11813ea90f881f9003ed74cbeac51a",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": 0.6436364054679871,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-target-a_side-100-181906",
+      "condition": "a_side",
+      "case": "space_station",
+      "axis": "target",
+      "seed": "181906",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "rlsa, A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-target-a_side-100-181906.jpg",
+      "sha256": "00baa7ab0008d5516aff1467b98d977a75371c1ce3f99edcd068398007d7b1c0",
+      "native_image_sha256": "cb7488eb89d5d11232a682d44f488172680d4d0998d637e8479189f4ca295024",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": -0.05026208609342575,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-generic-a_side-100-181906",
+      "condition": "a_side",
+      "case": "space_station",
+      "axis": "generic",
+      "seed": "181906",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-generic-a_side-100-181906.jpg",
+      "sha256": "43a1337c70f32a1bcd578ebcf27b024feeeed0a28655a55b28ac0e87580694c7",
+      "native_image_sha256": "6985f4615322d7bb10eb1cc40e13d0127764ae74f677e35251a4094288a5b0bc",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": -0.08331423997879028,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-target-repair-600-181906",
+      "condition": "repair",
+      "case": "space_station",
+      "axis": "target",
+      "seed": "181906",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "rlsa, A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-target-repair-600-181906.jpg",
+      "sha256": "cc243c82871c949f64245dd51406bdf0e6684c2365215dc1d67b458fd43a97bc",
+      "native_image_sha256": "9336f35d2a95eccaedb361dea55c48749c578d5c2a5a5c2fe867f3674ef4b228",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": 0.603870689868927,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-generic-repair-600-181906",
+      "condition": "repair",
+      "case": "space_station",
+      "axis": "generic",
+      "seed": "181906",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-generic-repair-600-181906.jpg",
+      "sha256": "ad0695e70dd37ca48cfdb37d1fc226082745d01522264ca89e562a43f919f545",
+      "native_image_sha256": "d224c02a9db1bc206ed3cb56e2056ab427ff83e47fc50acdb572b96e4b205499",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": -0.03146534040570259,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-target-style_dial-0-181906",
+      "condition": "style_dial",
+      "case": "space_station",
+      "axis": "target",
+      "seed": "181906",
+      "strength": 0.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "rlsa, A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-target-style_dial-0-181906.jpg",
+      "sha256": "595390b9b8a0a3fcfb29b90abd96a25008d5c3883dbbe83eecae2d0eaf32b8ad",
+      "native_image_sha256": "f817d805bce426996420338e74b86d74fe4d828e440caea930da0071f0455321",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": 0.3072798550128937,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-generic-style_dial-0-181906",
+      "condition": "style_dial",
+      "case": "space_station",
+      "axis": "generic",
+      "seed": "181906",
+      "strength": 0.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-generic-style_dial-0-181906.jpg",
+      "sha256": "2360fc14c23cb1f57e84af9223347b8d9b6751b1dde6ae3a5f7ffba24dfa4614",
+      "native_image_sha256": "798fe5e809789dca3fab724c4b7f682981bf3148d737b0641a178d552b1adb3e",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": -0.019953863695263863,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-target-style_dial-300-181906",
+      "condition": "style_dial",
+      "case": "space_station",
+      "axis": "target",
+      "seed": "181906",
+      "strength": 3.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "rlsa, A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-target-style_dial-300-181906.jpg",
+      "sha256": "c6e852ebee646a31076346bdd6beeff9620f2787d555d4c4934e7abab3618b48",
+      "native_image_sha256": "5ee653120b3947a333050f9169b09b972b29ad7fa8d3a683a82103f45dac7d18",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": 0.5023355484008789,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-generic-style_dial-300-181906",
+      "condition": "style_dial",
+      "case": "space_station",
+      "axis": "generic",
+      "seed": "181906",
+      "strength": 3.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-generic-style_dial-300-181906.jpg",
+      "sha256": "f1db1a672ade0985f5f5be8da53b1c5f12bb27661632e6162d78149764f0a361",
+      "native_image_sha256": "2df6812787709e943f60d643bf8c099dfc773a03769ee1a95ba6b4a8775a7214",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": -0.012132449075579643,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-target-style_dial_sched-600-181906",
+      "condition": "style_dial_sched",
+      "case": "space_station",
+      "axis": "target",
+      "seed": "181906",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "rlsa, A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-target-style_dial_sched-600-181906.jpg",
+      "sha256": "4bbd0adf698e49a72b9cdd8f8a0bd39c0e43d22960ae071a97254af83fab4258",
+      "native_image_sha256": "05ea0e4405e5078ec0042299352e7e00f84f255138a04ec00069c59e028e68b6",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": 0.5129835605621338,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-generic-style_dial_sched-600-181906",
+      "condition": "style_dial_sched",
+      "case": "space_station",
+      "axis": "generic",
+      "seed": "181906",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-generic-style_dial_sched-600-181906.jpg",
+      "sha256": "10c03a7469651f8e1cb9fc8c7fbc0c079130b2dd7436c51adeade07bc2f7f590",
+      "native_image_sha256": "1394396508ef9a6dbdfa93692b64f9de5dcd9416b35c9063e61e34e802dfa3ce",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": -0.020027898252010345,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-generic-base-100-181907",
+      "condition": "base",
+      "case": "space_station",
+      "axis": "generic",
+      "seed": "181907",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-generic-base-100-181907.jpg",
+      "sha256": "b2250cf3b5a66d10bfb367d2d5d25b249c92694ddd059ae6c3e61e77a69390c8",
+      "native_image_sha256": "bd34e26f7b6970d764dfb2408cd3c0231fa0e5feeb1ff38de0a1e095d7031157",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": -0.016717124730348587,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-target-naive-100-181907",
+      "condition": "naive",
+      "case": "space_station",
+      "axis": "target",
+      "seed": "181907",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "rlsa, A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-target-naive-100-181907.jpg",
+      "sha256": "60ce0b65e1bbeef1ce9952be6a2ad0c6dec19390e3b010bd8e1da008367e4baa",
+      "native_image_sha256": "1537642abb9169303a746397d5ec0be7afc7c2c40b21ba6edf50f80ea9f5b13d",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": 0.6785422563552856,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-generic-naive-100-181907",
+      "condition": "naive",
+      "case": "space_station",
+      "axis": "generic",
+      "seed": "181907",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-generic-naive-100-181907.jpg",
+      "sha256": "927a9555da468cd46af877ad301decf71b96c365ffa260285272a16cd10f2324",
+      "native_image_sha256": "7b657e06391bbc490b6b4b3bd2f8d7bce7b3b0a89b12b55c9bf0e0bec435b411",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": 0.6809784770011902,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-target-a_side-100-181907",
+      "condition": "a_side",
+      "case": "space_station",
+      "axis": "target",
+      "seed": "181907",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "rlsa, A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-target-a_side-100-181907.jpg",
+      "sha256": "9900194fa76bd3fa4426bc172034dcbe3673d06f67c959cf3ce4050678c54528",
+      "native_image_sha256": "914b94d5cc2f60c0246ba8dfcf87301322acadab9826be41641b7764ec9acaf4",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": 0.0029717832803726196,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-generic-a_side-100-181907",
+      "condition": "a_side",
+      "case": "space_station",
+      "axis": "generic",
+      "seed": "181907",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-generic-a_side-100-181907.jpg",
+      "sha256": "b87e6685d1ef3c8fab8bc3e96b3cf46c4ee0e7bf16473bdab923bf7017e7a321",
+      "native_image_sha256": "94b6c555b9ba094389b36bf816b7aa2715d27cf3430dbd46b8a69f78e8690a64",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": -0.14059865474700928,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-target-repair-600-181907",
+      "condition": "repair",
+      "case": "space_station",
+      "axis": "target",
+      "seed": "181907",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "rlsa, A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-target-repair-600-181907.jpg",
+      "sha256": "651a4e4f7a68371e9391fc7db0e84a7387a4cd8e1bd3c06675a5a3f8b28b2da7",
+      "native_image_sha256": "f4b475fe2373df8498d1c47f6ae0598db6de525ea1976b9c59274cd87d676915",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": 0.6629345417022705,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-generic-repair-600-181907",
+      "condition": "repair",
+      "case": "space_station",
+      "axis": "generic",
+      "seed": "181907",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-generic-repair-600-181907.jpg",
+      "sha256": "4bdcd8ebd4b98d4b009119c829b6b3c662cef9fd7dde46763c34e1ab01214df9",
+      "native_image_sha256": "631f25ed479841414744fbf8a62ca49a221ebe33360d2f1f25b5a704d92f1066",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": -0.051332470029592514,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-target-style_dial-0-181907",
+      "condition": "style_dial",
+      "case": "space_station",
+      "axis": "target",
+      "seed": "181907",
+      "strength": 0.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "rlsa, A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-target-style_dial-0-181907.jpg",
+      "sha256": "a32ee529b4fd2ecc7047a3a545f1235a2bbd5df02fedfddefab08a2264678a2d",
+      "native_image_sha256": "35ae69af5dfe49c6121bf722060991ddd657ddc15ea6305edcc1e0247249e7de",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": 0.3647152781486511,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-generic-style_dial-0-181907",
+      "condition": "style_dial",
+      "case": "space_station",
+      "axis": "generic",
+      "seed": "181907",
+      "strength": 0.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-generic-style_dial-0-181907.jpg",
+      "sha256": "44df4189cbe09602047217af7b5935f77b28a864b096ef0b955da86c906dae60",
+      "native_image_sha256": "425403941ff1d499d7f552d9d13de8905e36a4ee97859de2b93808f45990bead",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": -0.048980966210365295,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-target-style_dial-300-181907",
+      "condition": "style_dial",
+      "case": "space_station",
+      "axis": "target",
+      "seed": "181907",
+      "strength": 3.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "rlsa, A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-target-style_dial-300-181907.jpg",
+      "sha256": "7777b86cda5da1b0d4b26976ea559dbcb17cdb9fa8ac5e066e91d4148e510bcb",
+      "native_image_sha256": "f9edb47b4256c1e23d526eea7484bfafdafe3b3d4e784e5c2d3e9aae3f9e9df6",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": 0.5321696400642395,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-generic-style_dial-300-181907",
+      "condition": "style_dial",
+      "case": "space_station",
+      "axis": "generic",
+      "seed": "181907",
+      "strength": 3.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-generic-style_dial-300-181907.jpg",
+      "sha256": "b65adda60bc14866427c6797b3bfc5335cdf043822db39e69494b3fef92c6fe9",
+      "native_image_sha256": "d1c117f54090492824c6a18b2006c9d23cfeb67d6d0f310c256263da7375095b",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": -0.04127202928066254,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-target-style_dial_sched-600-181907",
+      "condition": "style_dial_sched",
+      "case": "space_station",
+      "axis": "target",
+      "seed": "181907",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "rlsa, A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-target-style_dial_sched-600-181907.jpg",
+      "sha256": "49e100ad374b2b0458cc3dede91d004f9926e6d4c43143e973d564a6995c5b7e",
+      "native_image_sha256": "5f19b03ea10aaa4cd3ba47f35f645ce3d5adcdfde5b7fb760e42e17749ac2944",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": 0.5884025692939758,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-generic-style_dial_sched-600-181907",
+      "condition": "style_dial_sched",
+      "case": "space_station",
+      "axis": "generic",
+      "seed": "181907",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-generic-style_dial_sched-600-181907.jpg",
+      "sha256": "5bfaa96ab9f2d234e63d4ab82ea38006769d202f2be28e956e5a0d16666dbd73",
+      "native_image_sha256": "4620358a763c0c6428e53107e5808c0c0bda56770a5a97b0c5d5d8383075161a",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": -0.05231164023280144,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-generic-base-100-181908",
+      "condition": "base",
+      "case": "space_station",
+      "axis": "generic",
+      "seed": "181908",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-generic-base-100-181908.jpg",
+      "sha256": "3bc323898a4d69371585cd761c2aebb2a82a3818c3c66dfce29aa358f7b9eb29",
+      "native_image_sha256": "afe5e0f08e81762a99f8dc7152e2f86835fa7156b6ccea8d1383139875592868",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": -0.01766207069158554,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-target-naive-100-181908",
+      "condition": "naive",
+      "case": "space_station",
+      "axis": "target",
+      "seed": "181908",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "rlsa, A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-target-naive-100-181908.jpg",
+      "sha256": "ec6d148732a832114ee57617f981851e37281b1079ec2fcad1d0f767d04882b6",
+      "native_image_sha256": "006b1c432ea1b7d7b14cbee8640f5e9419736eaabcbeaa9f266972dead4e7537",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": 0.6815896034240723,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-generic-naive-100-181908",
+      "condition": "naive",
+      "case": "space_station",
+      "axis": "generic",
+      "seed": "181908",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-generic-naive-100-181908.jpg",
+      "sha256": "cd50b730236510b9c2bc57a4c316392c5c478f6cb6284e3a2879762465acec76",
+      "native_image_sha256": "75b8127387d75ece23cbd77c7942d067ba081e637fd7691518afa5ba6702e97f",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": 0.6590402722358704,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-target-a_side-100-181908",
+      "condition": "a_side",
+      "case": "space_station",
+      "axis": "target",
+      "seed": "181908",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "rlsa, A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-target-a_side-100-181908.jpg",
+      "sha256": "0c6c69df83f2f1c16ece799658531c3aa9b0e2c4dd9e080651cb41ebfe6ed9c1",
+      "native_image_sha256": "d70927cd2af095dbccabf0e3d688faded49e2355cd3ee6ebff6bc11a25ad6b4a",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": -0.0026226677000522614,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-generic-a_side-100-181908",
+      "condition": "a_side",
+      "case": "space_station",
+      "axis": "generic",
+      "seed": "181908",
+      "strength": 1.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-generic-a_side-100-181908.jpg",
+      "sha256": "763985ea709f7f6a5ba2d4ebe897c52038c9ca830a9c6f622eaf124d9320abfa",
+      "native_image_sha256": "84d01fa2d5d04b5d7b4e7a2647d0e433e43d03f5b9a9c235bbc788fb99d97165",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": -0.09219425916671753,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-target-repair-600-181908",
+      "condition": "repair",
+      "case": "space_station",
+      "axis": "target",
+      "seed": "181908",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "rlsa, A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-target-repair-600-181908.jpg",
+      "sha256": "78e34c07cf0bf4e94a2afdad1b071b1b306d9f011ff1f966eb80e870c492bad3",
+      "native_image_sha256": "96e7631409eef9267292e604c61ee3b72d992f40afae70b4cce7405627f24d21",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": 0.5654683709144592,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-generic-repair-600-181908",
+      "condition": "repair",
+      "case": "space_station",
+      "axis": "generic",
+      "seed": "181908",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-generic-repair-600-181908.jpg",
+      "sha256": "2b2e16faf2136c30b4f482d0ac61d56d3a21287305b3d57cc64d195665312401",
+      "native_image_sha256": "e458ffe717b556f864e85c9c3cc16b42e856e00b15c6d32d2a226dc8288ff4a2",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": -0.04074997454881668,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-target-style_dial-0-181908",
+      "condition": "style_dial",
+      "case": "space_station",
+      "axis": "target",
+      "seed": "181908",
+      "strength": 0.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "rlsa, A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-target-style_dial-0-181908.jpg",
+      "sha256": "d9f02598e229de08840f6f952a53fcc636f1300480c6e7cba01fc099d9d1e28c",
+      "native_image_sha256": "0598a39e0d78586a3756bba208abe1c6599465240523427607a8b5da97e7119f",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": 0.33583569526672363,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-generic-style_dial-0-181908",
+      "condition": "style_dial",
+      "case": "space_station",
+      "axis": "generic",
+      "seed": "181908",
+      "strength": 0.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-generic-style_dial-0-181908.jpg",
+      "sha256": "5fc792989fec8607381193a7748f36a4de65eb9429b5e8eecff196705299d1d9",
+      "native_image_sha256": "d2db08056a4ddd4120e50c5167cfd64a951e1b7c1ccf62b0a4d2a81dc67a1705",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": -0.0460364930331707,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-target-style_dial-300-181908",
+      "condition": "style_dial",
+      "case": "space_station",
+      "axis": "target",
+      "seed": "181908",
+      "strength": 3.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "rlsa, A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-target-style_dial-300-181908.jpg",
+      "sha256": "881eed33ca603b9b6dd59c65e44eb125e63eafa52c475f7e47e909ee39edcf5e",
+      "native_image_sha256": "6e7b0d0447146142caf7fe6fa7cd1ec441201e5a1571206dbc9f0fb7859397b9",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": 0.4193110466003418,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-generic-style_dial-300-181908",
+      "condition": "style_dial",
+      "case": "space_station",
+      "axis": "generic",
+      "seed": "181908",
+      "strength": 3.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-generic-style_dial-300-181908.jpg",
+      "sha256": "013379af7a9553f6ff2263ebabb386e05f7d56aae89efb3ec59bb23c86c7584c",
+      "native_image_sha256": "5df8cf4d9d09e07d7b6ff1e8d79d3af9dfa3db28b483cfdefe94f5e3304cc2c7",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": -0.030587365850806236,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-target-style_dial_sched-600-181908",
+      "condition": "style_dial_sched",
+      "case": "space_station",
+      "axis": "target",
+      "seed": "181908",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "rlsa, A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-target-style_dial_sched-600-181908.jpg",
+      "sha256": "3fe2727067ca68dd5fd32dc31e6073c60f7230566c8aef925b79fcb7cbc30e07",
+      "native_image_sha256": "b3f6b90c2a2806893aeb99fe759d4e3af67155309f4c738f434a25c0d4ef18cc",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": 0.5161028504371643,
+          "status": "ok",
+          "details": {
+            "faces": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "hl-space_station-generic-style_dial_sched-600-181908",
+      "condition": "style_dial_sched",
+      "case": "space_station",
+      "axis": "generic",
+      "seed": "181908",
+      "strength": 6.0,
+      "protocol": "krea2-turbo-8step-highlights",
+      "prompt": "A close-up head-and-shoulders photograph of a woman, facing the camera. Her face is large in the frame and unobstructed, with natural skin texture and both eyes sharply in focus. She is wearing an opaque silver flight suit with a high closed collar and orange mission patches, with her chest and shoulders fully covered and no helmet. She has a calm, curious expression. A circular space-station window shows a softly blurred blue planet behind her, with warm instrument lights in the background. Soft cinematic key light illuminates her face. Photorealistic live-action science-fiction film still.",
+      "image": "images/hl-space_station-generic-style_dial_sched-600-181908.jpg",
+      "sha256": "99c4b973bd877267f24f7ad5a1e244177dbe2203e6323afc4e4237169a68a424",
+      "native_image_sha256": "18e4e227d31715dbea9f1ecf8f81d4016b98e44627c4f7f6df48b4506b570ef9",
+      "width": 416,
+      "height": 608,
+      "scores": {
+        "face_similarity": {
+          "value": -0.04689793288707733,
           "status": "ok",
           "details": {
             "faces": 1
