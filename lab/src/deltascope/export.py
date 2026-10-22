@@ -52,6 +52,7 @@ def export_dataset(path,out):
     reject_local_paths(public)
     public['display_only']=True;public['can_score']=False;public['records'],public['summary']=summarize(public)
     for name in ['app.js','styles.css']:shutil.copyfile(WEB/name,out/name)
+    if (root/'explorer.html').is_file():shutil.copyfile(root/'explorer.html',out/'explorer.html')  # optional interactive explorer page shipped with the case study
     html=(WEB/'index.html').read_text().replace('<script src="app.js" defer>', '<script src="dataset.js"></script>\n<script src="app.js" defer>')
     (out/'index.html').write_text(html);(out/'.nojekyll').write_text('')
     payload=json.dumps(public,ensure_ascii=False,allow_nan=False).replace('<','\\u003c').replace('\u2028','\\u2028').replace('\u2029','\\u2029')

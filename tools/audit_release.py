@@ -2081,7 +2081,7 @@ IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".webp", ".gif", ".svg", ".avif", ".b
 MODEL_SUFFIXES = {".safetensors", ".ckpt", ".pt", ".pth", ".bin", ".onnx", ".gguf", ".ggml", ".h5", ".hdf5", ".npz", ".npy", ".pkl", ".pickle", ".joblib", ".tflite", ".model"}
 ARTIFACT_SUFFIXES = {".db", ".sqlite", ".sqlite3", ".log", ".pyc", ".pyo", ".o", ".so", ".dylib", ".dll", ".exe", ".whl", ".egg", ".zip", ".tar", ".tgz", ".gz", ".xz", ".ipynb"}
 ARTIFACT_DIRS = {".git", ".venv", "venv", "__pycache__", "node_modules", ".cache", ".pytest_cache", ".mypy_cache", ".ruff_cache", ".adapter-review", ".codex", ".agents", ".aws", ".ssh", "build", "dist", "site", "_site", "htmlcov", ".tox", ".nox", "runs", "output", "outputs", "face_crops", "face_crops_hires", "reference_images", "training_data"}
-PUBLIC_FILES = {"index.html", "app.js", "styles.css", "dataset.js", "dataset.json", ".nojekyll"}
+PUBLIC_FILES = {"index.html", "app.js", "styles.css", "dataset.js", "dataset.json", ".nojekyll", "explorer.html"}
 # A known synthetic privacy-test fixture, restricted to its test module. This is
 # not a blanket exemption for tests or Python code.
 SYNTHETIC_PATHS = {"lab/tests/test_pipeline.py": {"/" + "private/weights/model.safetensors"}}
