@@ -23,6 +23,14 @@ import tokenize
 # Frozen hashes of the explicitly approved display assets. Updating this catalog
 # is a reviewed content change, not something the auditor does automatically.
 APPROVED_IMAGES = {
+    'docs/figures/binding-d1-probe.png': 'e06a1b3699ae5665e8ec71ecd989821847c6d6c66baff4d4a6b870ad4e933e61',
+    'docs/figures/binding-last-token.png': '48ec39f305e5a5bc3050ce114953d4327dfde88d5a5dff82b301ff1e2d46a2bd',
+    'docs/figures/binding-local-vs-broadcast.png': '6a976a23cbf1c25f31c34e554dc309f36609b09ac98d8677cc957019c60d681c',
+    'docs/figures/binding-sign-check.png': 'e2914ef4ee4a503f8869779a5ed21f853442e82730ba9d92ceae4f090cb03c0f',
+    'docs/figures/binding-test-strangers.png': 'f4637de5318d4967f3fc3141f44fe79e4f88927d21718639f2af2d2d9bc52a42',
+    'docs/figures/prompt-coverage-factors.png': 'e49b3003630b22540ab5d6237cc87ce9863f51927e1ae73d399d2f2124994d05',
+    'docs/figures/prompt-coverage-recipe-differences.png': '57f0d5b8eec9243cc5745d9adfbd878ed690b41c33927a980adb82b468b5d81b',
+    'docs/figures/prompt-coverage-response-ratios.png': '49bf85e31351d227d108cc1f3a54c124c1495147a1f6ed671b57394c07c20f91',
     'examples/beach-comparison-171018.jpg': '80cc8faeada98e573f4c08e23bb794e28eb44fce8cd3543a7cf8615fb4957eb9',
     'examples/creative-scenes/images/arcade-171017.jpg': '68d4c222329ec5fbcbab0b509016868a375118b2f18123c483e6939b25048eb1',
     'examples/creative-scenes/images/arcade-171018.jpg': 'c23ee537feace6ca4b1e990a1728dfd9365eb0b1da1b322d439baa442eb59cd9',
