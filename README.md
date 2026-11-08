@@ -87,6 +87,13 @@ The supplied examples use one character and selected prompts. The [creative-scen
 
 The [real-model check](docs/real-model-validation.md) reproduces all 256 historical A tensors and both rendered beach prompt states exactly with `--method historical`. It also reports capture, solve and rendering times, and the numerical difference from the stable CPU mode.
 
+## Research notes
+
+- [Lessons](docs/lessons.md): short-form findings since the first release, including name binding and the frozen-test result.
+- [Prompt-dependent preservation](docs/prompt-dependent-preservation.md): the controlled capture-recipe follow-up, with paired renders, a fixed-input probe and a numerical-reproducibility check.
+- [Roadmap](docs/roadmap.md): open directions.
+- [Attributions](docs/attributions.md): ideas from other work and where they are credited.
+
 ## Why I'm sharing this
 
 I'd been letting these experiments collect dust for a few months. Seeing [Fizgig's](https://github.com/shootthesound/Fizgig) recent release and the current mechanistic interpretability conversations nudged me to share them. Fizgig is the more mature, fully featured toolkit; I hope this smaller research release helps someone too.
