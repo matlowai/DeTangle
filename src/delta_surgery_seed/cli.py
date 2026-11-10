@@ -209,9 +209,11 @@ def main():
         p.add_argument("--" + name, required=True)
     p = sub.add_parser("demo", help="Run a synthetic CPU example without private weights")
     p.add_argument("--out", required=True)
+    from .composite_cli import COMMANDS, add_parsers
+    add_parsers(sub)
     arguments = vars(parser.parse_args())
     command = arguments.pop("command")
-    result = {"repair": repair, "evaluate": evaluate, "demo": demo}[command](**arguments)
+    result = {"repair": repair, "evaluate": evaluate, "demo": demo, **COMMANDS}[command](**arguments)
     print(json.dumps(result, indent=2, allow_nan=False))
 
 

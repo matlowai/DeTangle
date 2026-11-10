@@ -31,6 +31,7 @@ APPROVED_IMAGES = {
     'docs/figures/prompt-coverage-factors.png': 'e49b3003630b22540ab5d6237cc87ce9863f51927e1ae73d399d2f2124994d05',
     'docs/figures/prompt-coverage-recipe-differences.png': '57f0d5b8eec9243cc5745d9adfbd878ed690b41c33927a980adb82b468b5d81b',
     'docs/figures/prompt-coverage-response-ratios.png': '49bf85e31351d227d108cc1f3a54c124c1495147a1f6ed671b57394c07c20f91',
+    'examples/space-station-ladder-181908.jpg': '25e54d97b23a1f336aaca8efbb185b7b8815f76842c1110caa8cfe3b117991a3',
     'examples/beach-comparison-171018.jpg': '80cc8faeada98e573f4c08e23bb794e28eb44fce8cd3543a7cf8615fb4957eb9',
     'examples/creative-scenes/images/arcade-171017.jpg': '68d4c222329ec5fbcbab0b509016868a375118b2f18123c483e6939b25048eb1',
     'examples/creative-scenes/images/arcade-171018.jpg': 'c23ee537feace6ca4b1e990a1728dfd9365eb0b1da1b322d439baa442eb59cd9',

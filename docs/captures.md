@@ -1,6 +1,8 @@
 # Activation inputs and experiment contract
 
-The CLI deliberately starts after activation collection. Model families differ in layer naming, timestep conventions, conditioning, LoRA injection and distributed execution. Supply captures from a collector appropriate to your model; no model-specific paths or hook integrations are assumed here.
+The solver deliberately starts after activation collection. Model families differ in layer naming, timestep conventions, conditioning, LoRA injection and distributed execution. Supply captures from a collector appropriate to your model; the solver assumes no model-specific paths or hook integrations.
+
+For Krea 2 on a ComfyUI checkout, `detangle collect-layers` writes captures in this schema. It hooks every adapted linear layer of the loaded LoRA, encodes image/prompt pairs and noises them at six flow fractions, with seeded noise and reservoirs. It is a different capture condition from the historical training-runtime captures, so record it as such. `detangle collect-text` captures the per-prompt text conditioning that the trigger amplifier fits. For other runtimes, `delta_surgery_seed.collect.LayerInputCollector` hooks any PyTorch module whose submodules match the LoRA key names. See [the composite-repair check](composite-repair-validation.md) for what these collectors reproduced.
 
 ## Tensor layout
 

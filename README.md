@@ -2,13 +2,34 @@
 
 # DeTangle
 
-Delta surgery for **Krea 2 and your own trained LoRA**: refit the adapter to reduce its response to generic prompts while retaining its response when the trigger is requested.
+Gradient-free repair for **Krea 2 and your own trained LoRA**: stop a character adapter from leaking into prompts that don't ask for it, and keep it working when the trigger is used. All edits are closed-form changes to a finished adapter's weights, with no retraining.
 
-The workflow is to capture activations with your original LoRA active, solve a repaired adapter, then compare both adapters and the base model on matching prompts and seeds. The examples here show where that separation works and where likeness is lost. The illustrated adapters are not included; use your own LoRA for the workflow below.
+![Space-station ladder, seed 181908: prompts without the trigger above, with the trigger below, columns A to F](examples/space-station-ladder-181908.jpg)
 
-![Beach comparison: generic prompts above, triggered prompts below](examples/beach-comparison-171018.jpg)
+| | Intervention | Bleed without trigger ↓ | Likeness with trigger ↑ |
+|---|---|---:|---:|
+| A | Original LoRA 1× | +0.677 | 0.682 |
+| B | A-side surgery 1× | −0.075 | −0.003 |
+| C | B + 35 % of the original A factors in blocks 12–15 + trigger amplifier 6× | −0.023 | 0.565 |
+| D | C with the photo-style part of the amplifier at 0 | −0.028 | 0.336 |
+| E | C with the style part at 6× on sampling steps 3–7 only | −0.029 | 0.516 |
+| F | Base model | 0.000 | n/a |
 
-**Naive 1.0 · Scalar surgery 1.25 · Base · DOP 1.0**, seed 171018, matching the app's default beach view. Top scores are similarity above the matched base without the trigger; bottom scores are raw triggered likeness. Scores were measured on the native images; this sheet uses resized display copies. DOP is a separately trained comparator, not an output of the repair command.
+*Krea 2 Turbo, seed 181908. Face-embedding cosine similarity, not a percentage. Bleed is the untriggered face's similarity to the character minus Base's for the same prompt and seed.*
+
+The original LoRA (A) puts the character into every portrait, asked for or not. A-side surgery (B) removes that bleed, but in strong-prior scenes like this sci-fi film still, the base model's prior for a familiar movie-star face then overpowers the trigger and the character is gone. C, D and E get her back without bringing the bleed back:
+- C restores part of the original adapter only in the blocks that carry identity.
+- C also adds a closed-form amplifier for the trigger in the text conditioning.
+- D and E split that amplifier into a photo-style part and an identity part, and E applies the style part only during the sampling steps where identity is written.
+
+On held-out seeds, the composite repair matches the original LoRA's likeness (0.73 vs 0.72 over nine scenes; 0.63 vs 0.65 on six film genres never used in fitting) while cutting generic bleed from +0.71 to +0.06.
+
+- **[Composite repair walkthrough](docs/composite-repair.md)**: each step in weight terms, why B fails, held-out validation, block localization, step scheduling, group shots and name binding, limits.
+- **[What this work demonstrates](docs/findings.md)**: capability summary, key tables and open directions.
+- **[Reproduction check](docs/composite-repair-validation.md)**: the commands below reproduce every tensor of the research adapters bit-for-bit, and the step-scheduled renders pixel-for-pixel.
+- **[For agents](AGENTS.md)**: how to pick up this repo and apply the method to another LoRA.
+
+The illustrated adapter is not distributed. Use your own LoRA for the workflows below.
 
 ## Use Krea 2 with your own LoRA
 
@@ -28,7 +49,7 @@ You need three inputs:
 
 Collect both capture sets with the **same Krea 2 model condition and the unmodified LoRA active**; the historical experiments used adapter strength 1.0. Keep noise, timesteps and prompt/latent pairing controlled, and record the settings. A capture tensor contains sampled input rows immediately before the corresponding LoRA A projection.
 
-**The model-specific activation collector is not bundled yet.** This release starts from saved activation matrices. Use your inference or training backend's hooks to collect them, following the [capture schema](docs/captures.md). The solver does not load Krea 2 or collect these inputs automatically. Capturing on the training checkpoint and rendering with Krea 2 Turbo are different conditions and should be recorded explicitly.
+`detangle collect-layers` collects these on a ComfyUI checkout with Krea 2 (install the `krea2` extra; see the [composite repair section](#composite-repair-blocks-amplifier-and-step-schedule)). You can also use your own backend's hooks, following the [capture schema](docs/captures.md). The historical captures came from the training runtime, and the bundled collector is a new capture condition: it has been smoke-tested end to end but not compared with them. Capturing on the training checkpoint and rendering with Krea 2 Turbo are different conditions and should be recorded explicitly.
 
 Run the repair once those files exist:
 
@@ -70,9 +91,45 @@ This verifies the A-only edit and measures full `BA` responses on the supplied i
 
 Load `repaired.safetensors` in your Krea 2 rendering workflow. Render the base model, original LoRA and repaired LoRA with matching prompts, seeds and sampling settings. Include prompts with and without your trigger, and inspect requested likeness, generic identity excess and image quality together. A good activation fit does not guarantee a good render.
 
+## Composite repair: blocks, amplifier and step schedule
+
+A-side surgery alone can lose the character in strong-prior scenes (rung B above). The composite repair rebuilds rungs C to E from your own adapter. Install the Krea 2 extra and point the commands at a ComfyUI checkout that has Krea 2 Turbo:
+
+```bash
+python -m pip install -e '.[krea2]'
+export DETANGLE_COMFYUI=/path/to/ComfyUI
+```
+
+```bash
+# C, part 1: restore 35 % of the original A factors in main blocks 12-15
+detangle blend --source your-krea2-lora.safetensors --repaired repaired.safetensors \
+  --blocks 12-15 --fraction 0.35 --out blend.safetensors
+
+# C, part 2: fit a closed-form trigger amplifier on txtmlp.3.
+# The spec lists triggered prompts to strengthen and untriggered prompts to hold fixed.
+detangle collect-text --diffusion-model krea2-turbo.safetensors --text-encoder qwen3-vl-4b.safetensors \
+  --lora repaired.safetensors --spec amp-spec.json --out text-captures.safetensors
+detangle amp-fit --spec amp-spec.json --captures text-captures.safetensors --out amp.safetensors
+
+# D: split the amplifier into a photo-style part and the rest
+detangle amp-fit --spec amp-spec.json --captures text-captures.safetensors --part style --out amp-style.safetensors
+detangle amp-fit --spec amp-spec.json --captures text-captures.safetensors --part rest  --out amp-rest.safetensors
+
+# E: render with the blend, the style-free amplifier at 6x, and the style part at 6x on steps 3-7 only
+detangle render --diffusion-model krea2-turbo.safetensors --text-encoder qwen3-vl-4b.safetensors --vae qwen-image-vae.safetensors \
+  --lora blend.safetensors --lora amp-rest.safetensors:6 --schedule amp-style.safetensors:6:3-7 \
+  --prompt "your-trigger, ..." --seed 181908 --out e.png
+```
+
+`detangle compose` packages a blend plus dosed amplifier parts into one LoRA file for ordinary workflows. A packaged file renders slightly differently from loading the parts separately, because ComfyUI rounds a weight difference to its compute dtype before applying strength. Load the parts separately when you need exact reproduction. Step scheduling currently runs through the bundled in-process pipeline (`detangle render`, or `ScheduledDelta` in Python), not through stock ComfyUI nodes. The settings above (35 %, blocks 12–15, 6×, steps 3–7) were selected for one character; treat them as a starting point. See the [walkthrough](docs/composite-repair.md) for how each was chosen and the [reproduction check](docs/composite-repair-validation.md) for exact arguments and the spec format. The scripts that produced the published findings are in [research/](research/README.md).
+
 ## Compare and score with DeltaScope
 
-The companion [DeltaScope app](lab/README.md) opens on the beach example above. It also includes the creative-scene comparisons, method explanations, research notes and broader aggregate results.
+The companion [DeltaScope app](lab/README.md) opens on the space-station ladder above. It also includes the beach and creative-scene comparisons, method explanations, research notes and broader aggregate results.
+
+![Beach comparison: generic prompts above, triggered prompts below](examples/beach-comparison-171018.jpg)
+
+**Naive 1.0 · Scalar surgery 1.25 · Base · DOP 1.0**, seed 171018: the first-release beach example, where A-side surgery alone already preserves likeness. Top scores are similarity above the matched base without the trigger; bottom scores are raw triggered likeness. Scores were measured on the native images; this sheet uses resized display copies. DOP is a separately trained comparator, not an output of the repair command.
 
 ```bash
 python -m pip install ./lab
@@ -89,6 +146,8 @@ The [real-model check](docs/real-model-validation.md) reproduces all 256 histori
 
 ## Research notes
 
+- [Composite repair](docs/composite-repair.md) and [findings](docs/findings.md): the space-station ladder, held-out validation, block localization, step scheduling and name binding.
+- [Research scripts](research/README.md): the as-run study code behind each finding, with a script-to-finding map.
 - [Lessons](docs/lessons.md): short-form findings since the first release, including name binding and the frozen-test result.
 - [Prompt-dependent preservation](docs/prompt-dependent-preservation.md): the controlled capture-recipe follow-up, with paired renders, a fixed-input probe and a numerical-reproducibility check.
 - [Roadmap](docs/roadmap.md): open directions.

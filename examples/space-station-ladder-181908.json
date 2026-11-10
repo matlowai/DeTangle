@@ -1,0 +1,173 @@
+{
+  "schema": 1,
+  "description": "Contact sheet of the space-station repair ladder, seed 181908. Columns A-F, rows: generic prompt without trigger (top), triggered prompt (bottom).",
+  "source_case_study": "lab/src/deltascope/case_studies/conditional_identity.json",
+  "protocol": "krea2-turbo-8step-highlights",
+  "case": "space_station",
+  "seed": "181908",
+  "metric": "face_similarity: ArcFace cosine of the largest detected face to the normalized centroid of 34 reference-face embeddings; generic_excess = generic score minus Base's generic score for the same prompt and seed.",
+  "base_generic_face_similarity": -0.01766207069158554,
+  "tile_size": [
+    320,
+    468
+  ],
+  "built_with": "PIL (Pillow); tiles resized with LANCZOS from the listed display images",
+  "columns": [
+    {
+      "column": "A",
+      "condition": "naive",
+      "strength": 1.0,
+      "label": "Naive LoRA 1×",
+      "rows": {
+        "generic": {
+          "record_id": "hl-space_station-generic-naive-100-181908",
+          "image": "lab/src/deltascope/case_studies/images/hl-space_station-generic-naive-100-181908.jpg",
+          "sha256": "cd50b730236510b9c2bc57a4c316392c5c478f6cb6284e3a2879762465acec76",
+          "prompt_has_trigger": false,
+          "face_similarity_raw": 0.6590402722358704,
+          "generic_excess": 0.6767023429274559,
+          "faces_detected": 1
+        },
+        "target": {
+          "record_id": "hl-space_station-target-naive-100-181908",
+          "image": "lab/src/deltascope/case_studies/images/hl-space_station-target-naive-100-181908.jpg",
+          "sha256": "ec6d148732a832114ee57617f981851e37281b1079ec2fcad1d0f767d04882b6",
+          "prompt_has_trigger": true,
+          "face_similarity_raw": 0.6815896034240723,
+          "generic_excess": null,
+          "faces_detected": 1
+        }
+      }
+    },
+    {
+      "column": "B",
+      "condition": "a_side",
+      "strength": 1.0,
+      "label": "A-side surgery 1×",
+      "rows": {
+        "generic": {
+          "record_id": "hl-space_station-generic-a_side-100-181908",
+          "image": "lab/src/deltascope/case_studies/images/hl-space_station-generic-a_side-100-181908.jpg",
+          "sha256": "763985ea709f7f6a5ba2d4ebe897c52038c9ca830a9c6f622eaf124d9320abfa",
+          "prompt_has_trigger": false,
+          "face_similarity_raw": -0.09219425916671753,
+          "generic_excess": -0.07453218847513199,
+          "faces_detected": 1
+        },
+        "target": {
+          "record_id": "hl-space_station-target-a_side-100-181908",
+          "image": "lab/src/deltascope/case_studies/images/hl-space_station-target-a_side-100-181908.jpg",
+          "sha256": "0c6c69df83f2f1c16ece799658531c3aa9b0e2c4dd9e080651cb41ebfe6ed9c1",
+          "prompt_has_trigger": true,
+          "face_similarity_raw": -0.0026226677000522614,
+          "generic_excess": null,
+          "faces_detected": 1
+        }
+      }
+    },
+    {
+      "column": "C",
+      "condition": "repair",
+      "strength": 6.0,
+      "label": "Blocks 12–15 blend + amplifier 6×",
+      "rows": {
+        "generic": {
+          "record_id": "hl-space_station-generic-repair-600-181908",
+          "image": "lab/src/deltascope/case_studies/images/hl-space_station-generic-repair-600-181908.jpg",
+          "sha256": "2b2e16faf2136c30b4f482d0ac61d56d3a21287305b3d57cc64d195665312401",
+          "prompt_has_trigger": false,
+          "face_similarity_raw": -0.04074997454881668,
+          "generic_excess": -0.02308790385723114,
+          "faces_detected": 1
+        },
+        "target": {
+          "record_id": "hl-space_station-target-repair-600-181908",
+          "image": "lab/src/deltascope/case_studies/images/hl-space_station-target-repair-600-181908.jpg",
+          "sha256": "78e34c07cf0bf4e94a2afdad1b071b1b306d9f011ff1f966eb80e870c492bad3",
+          "prompt_has_trigger": true,
+          "face_similarity_raw": 0.5654683709144592,
+          "generic_excess": null,
+          "faces_detected": 1
+        }
+      }
+    },
+    {
+      "column": "D",
+      "condition": "style_dial",
+      "strength": 0.0,
+      "label": "C with style dial 0",
+      "rows": {
+        "generic": {
+          "record_id": "hl-space_station-generic-style_dial-0-181908",
+          "image": "lab/src/deltascope/case_studies/images/hl-space_station-generic-style_dial-0-181908.jpg",
+          "sha256": "5fc792989fec8607381193a7748f36a4de65eb9429b5e8eecff196705299d1d9",
+          "prompt_has_trigger": false,
+          "face_similarity_raw": -0.0460364930331707,
+          "generic_excess": -0.02837442234158516,
+          "faces_detected": 1
+        },
+        "target": {
+          "record_id": "hl-space_station-target-style_dial-0-181908",
+          "image": "lab/src/deltascope/case_studies/images/hl-space_station-target-style_dial-0-181908.jpg",
+          "sha256": "d9f02598e229de08840f6f952a53fcc636f1300480c6e7cba01fc099d9d1e28c",
+          "prompt_has_trigger": true,
+          "face_similarity_raw": 0.33583569526672363,
+          "generic_excess": null,
+          "faces_detected": 1
+        }
+      }
+    },
+    {
+      "column": "E",
+      "condition": "style_dial_sched",
+      "strength": 6.0,
+      "label": "Style dial 6×, steps 3–7 only",
+      "rows": {
+        "generic": {
+          "record_id": "hl-space_station-generic-style_dial_sched-600-181908",
+          "image": "lab/src/deltascope/case_studies/images/hl-space_station-generic-style_dial_sched-600-181908.jpg",
+          "sha256": "99c4b973bd877267f24f7ad5a1e244177dbe2203e6323afc4e4237169a68a424",
+          "prompt_has_trigger": false,
+          "face_similarity_raw": -0.04689793288707733,
+          "generic_excess": -0.02923586219549179,
+          "faces_detected": 1
+        },
+        "target": {
+          "record_id": "hl-space_station-target-style_dial_sched-600-181908",
+          "image": "lab/src/deltascope/case_studies/images/hl-space_station-target-style_dial_sched-600-181908.jpg",
+          "sha256": "3fe2727067ca68dd5fd32dc31e6073c60f7230566c8aef925b79fcb7cbc30e07",
+          "prompt_has_trigger": true,
+          "face_similarity_raw": 0.5161028504371643,
+          "generic_excess": null,
+          "faces_detected": 1
+        }
+      }
+    },
+    {
+      "column": "F",
+      "condition": "base",
+      "strength": 1.0,
+      "label": "Base (no adapter)",
+      "rows": {
+        "generic": {
+          "record_id": "hl-space_station-generic-base-100-181908",
+          "image": "lab/src/deltascope/case_studies/images/hl-space_station-generic-base-100-181908.jpg",
+          "sha256": "3bc323898a4d69371585cd761c2aebb2a82a3818c3c66dfce29aa358f7b9eb29",
+          "prompt_has_trigger": false,
+          "face_similarity_raw": -0.01766207069158554,
+          "generic_excess": 0.0,
+          "faces_detected": 1
+        },
+        "target": null
+      }
+    }
+  ],
+  "output": {
+    "image": "examples/space-station-ladder-181908.jpg",
+    "sha256": "25e54d97b23a1f336aaca8efbb185b7b8815f76842c1110caa8cfe3b117991a3",
+    "size": [
+      2194,
+      1208
+    ]
+  }
+}
