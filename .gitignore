@@ -16,3 +16,6 @@ _site/
 *.log
 qa/
 node_modules/
+
+# Default output root of the research/ study scripts (DETANGLE_RESEARCH_ROOT)
+detangle-research/

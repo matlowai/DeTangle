@@ -1,0 +1,412 @@
+{
+  "date_utc": "2026-11-10",
+  "purpose": "Reproduce the private composite-repair ladder (B A-side, C blend + amplifier, D style dial, E step-scheduled style dial) with the exported functions and CLI",
+  "software": {
+    "python": "3.12",
+    "torch_cpu_checks": "2.10.0+cu128",
+    "torch_gpu_checks": "2.14.1+cu130",
+    "comfyui_commit": "87d23b817 (2026-07-15)",
+    "comfy_kitchen": "0.2.20",
+    "comfy_aimdo": "0.4.10"
+  },
+  "hardware": {
+    "cpu": "AMD Ryzen 7 9800X3D",
+    "gpu": "NVIDIA GeForce RTX 5090, 32 GB",
+    "gpu_count_used": 1
+  },
+  "model": {
+    "diffusion_model": "Krea 2 Turbo, FP8 scaled",
+    "text_encoder": "Qwen3-VL 4B, FP8 scaled",
+    "vae": "Qwen-Image VAE"
+  },
+  "inputs": {
+    "source_lora_sha256": "56c97051354ca63d61fa38d0b6baad73b55f805804cf72692dda2ec056150e57",
+    "a_side_sha256": "a2aacad642f517d687857cd4b39f37b11ed977d8b66d0d364650c6db17c0cc7e",
+    "class_capture_sha256": "2e76d6e0ce7a4f466b88d4e370e7acb65bd73a9aee0148c78d0b9305839fc345",
+    "trigger_capture_sha256": "9bce2044d44a19962951746f532fdcb696ee8b9c57f994efe51dc03ab3bc6e30",
+    "amplifier_spec_sha256": "c1a4461a9ee575837c1c6e9acc2847f235cbcdccc08de95623683860cb010596",
+    "amplifier_spec_counts": {
+      "sources": 119,
+      "preserve": 390,
+      "style_contexts": 43,
+      "captured_prompts": 592
+    },
+    "reference_artifacts_sha256": {
+      "amplifier_full": "80719898fd47fad550b59db19152e83dd15143554684651003d1fe1ba2736ba2",
+      "amplifier_style": "7329ee63b91009d57b61ecaba8e43101ee29b72ec9f34ad16742ae1464e1f6c8",
+      "amplifier_rest": "4359bedf912286720194d002690d630be7f96cfe72331e8a1ba140fb89cc9c00",
+      "split_style": "1a85a1925c725bf03c204eb4488a7cf80c18d99bcefedc700319108010ae6286",
+      "split_rest": "82dd7dc99b141ff2d4a469132768c89cecaa1f7ce895d3639a25e1c27e0c39ca",
+      "packaged_C": "b4d305caa936710b09ab34bee2722de7abb38c8a8eb6ec6ea788a02eb353993e"
+    }
+  },
+  "rung_B_a_side": {
+    "command": "detangle repair --mu 0.3 --ridge 0.001 --center zero --method auto",
+    "a_tensors_bit_identical": 512,
+    "tensors_total": 512,
+    "max_abs_diff": 0.0,
+    "wall_seconds": 68.0
+  },
+  "rung_C": {
+    "blend": {
+      "function": "blend_blocks / detangle blend",
+      "stored_blends_checked": 11,
+      "all_bit_identical": true,
+      "per_file": {
+        "blend_b12_15_100": {
+          "tensors": 512,
+          "bit_identical": 512,
+          "max_abs_diff": 0.0,
+          "blended_a_factors": 32,
+          "reference_sha256": "a39774f014d1587d77c07654b7e064cfaccad9e1bab7539bbf4ded54072b7b86"
+        },
+        "blend_b12_15_35": {
+          "tensors": 512,
+          "bit_identical": 512,
+          "max_abs_diff": 0.0,
+          "blended_a_factors": 32,
+          "reference_sha256": "10c1df38791b5169c89de7aa81c68b3400975c673a78832c4edcfb72c7d3bdfa"
+        },
+        "blend_b12_15_50": {
+          "tensors": 512,
+          "bit_identical": 512,
+          "max_abs_diff": 0.0,
+          "blended_a_factors": 32,
+          "reference_sha256": "a03c7144b0d72ea509e05a3ff6e384140e0817abdee6901c7c496f87a9fb50bc"
+        },
+        "blend_b12_15_65": {
+          "tensors": 512,
+          "bit_identical": 512,
+          "max_abs_diff": 0.0,
+          "blended_a_factors": 32,
+          "reference_sha256": "b145b214575f3c84926ab3b9fff7e36662483487384add56b2e9309d2a03530e"
+        },
+        "blend_b8_11_100": {
+          "tensors": 512,
+          "bit_identical": 512,
+          "max_abs_diff": 0.0,
+          "blended_a_factors": 32,
+          "reference_sha256": "8fddac88a5ecd4a92f7ef8748bf1734cc4b2e8d604a17267e19d9ce9e947c192"
+        },
+        "blend_b8_11_50": {
+          "tensors": 512,
+          "bit_identical": 512,
+          "max_abs_diff": 0.0,
+          "blended_a_factors": 32,
+          "reference_sha256": "1ef8b195da9ed9b575947c936fe82e7b64af21b4b28c51124a3ce4136ea91583"
+        },
+        "blend_b8_15_15": {
+          "tensors": 512,
+          "bit_identical": 512,
+          "max_abs_diff": 0.0,
+          "blended_a_factors": 64,
+          "reference_sha256": "77ae8d6f82c1f97538de2f0114cebec82e1a5a927043458a13edcd4d00f801aa"
+        },
+        "blend_b8_15_25": {
+          "tensors": 512,
+          "bit_identical": 512,
+          "max_abs_diff": 0.0,
+          "blended_a_factors": 64,
+          "reference_sha256": "5ed2cae1c8e01e58f58c64f390e3e5817d22c27add08f427a489d69793c2ac61"
+        },
+        "blend_b8_15_35": {
+          "tensors": 512,
+          "bit_identical": 512,
+          "max_abs_diff": 0.0,
+          "blended_a_factors": 64,
+          "reference_sha256": "4bebb8132d6adc6e0223a4c6e350bdc8569cea7290c98df2b01bd46c8359c916"
+        },
+        "blend_b8_15_50": {
+          "tensors": 512,
+          "bit_identical": 512,
+          "max_abs_diff": 0.0,
+          "blended_a_factors": 64,
+          "reference_sha256": "7db252ba22d5281b8435f561a20c8314ebcc9a1aebda239b5eb5aecdfa2aa355"
+        },
+        "blend_b8_15_75": {
+          "tensors": 512,
+          "bit_identical": 512,
+          "max_abs_diff": 0.0,
+          "blended_a_factors": 64,
+          "reference_sha256": "fdbbb4c3154f8e68f01ee33b8238ad72a6fceac78da6a02ae4c846de0dc75773"
+        }
+      }
+    },
+    "amplifier_fit": {
+      "function": "fit_amplifier / detangle collect-text + amp-fit --part full --device cuda",
+      "reference": "amplifier_full",
+      "bit_identical": true,
+      "max_abs_diff": 0.0,
+      "differing_elements": 0,
+      "elements": 37748736,
+      "fit_report": {
+        "n_source": 119,
+        "n_preserve": 390,
+        "fit_achieved": 0.9910226792762096,
+        "preserve_relative_change": {
+          "mean": 0.01002659959336504,
+          "max": 0.013403959572315216,
+          "n": 390
+        },
+        "trigger_offset_relative_norm": 0.4686358498425043
+      }
+    },
+    "amplifier_fit_cpu": {
+      "device": "cpu",
+      "bit_identical": false,
+      "max_abs_diff": 2.9802322387695312e-08,
+      "relative_frobenius_diff": 6.255495062635004e-10,
+      "differing_elements": 22076,
+      "elements": 37748736,
+      "wall_seconds": 63.1,
+      "reason": "float64 Cholesky and Gram accumulation on CPU BLAS instead of CUDA; the float32 result differs in the last bit for 0.06 % of elements"
+    },
+    "packaged_file": {
+      "function": "compose / detangle compose --diff amplifier:6",
+      "tensors": 513,
+      "bit_identical": 513,
+      "max_abs_diff": 0.0,
+      "from_ported_blend": 513,
+      "file_hash_note": "File bytes differ: the exported blend keeps the source adapter's metadata and adds provenance; the as-run blend wrote none."
+    }
+  },
+  "rung_D_style_dial": {
+    "fit_variants": {
+      "style": {
+        "reference": "amplifier_style",
+        "bit_identical": true,
+        "max_abs_diff": 0.0,
+        "differing_elements": 0,
+        "style_directions": {
+          "rows": 3698,
+          "k": 4,
+          "energy_topk": 0.5913185262491714,
+          "trigger_offset_energy_in_directions": 0.41022259207901435
+        }
+      },
+      "rest": {
+        "reference": "amplifier_rest",
+        "bit_identical": true,
+        "max_abs_diff": 0.0,
+        "differing_elements": 0,
+        "style_directions": {
+          "rows": 3698,
+          "k": 4,
+          "energy_topk": 0.5913185262491714,
+          "trigger_offset_energy_in_directions": 0.41022259207901435
+        }
+      }
+    },
+    "weight_space_split": {
+      "function": "split_amplifier with the study's stored directions",
+      "style_bit_identical": true,
+      "rest_bit_identical": true
+    },
+    "split_vs_refit": {
+      "style_plus_rest_minus_full_max_abs": 8.605420589447021e-07,
+      "full_max_abs": 5.796102046966553,
+      "split_with_recomputed_directions": {
+        "style_max_abs_diff": 1.0728836059570312e-06,
+        "style_ref_max_abs": 3.330169677734375,
+        "rest_max_abs_diff": 1.1026859283447266e-06,
+        "rest_ref_max_abs": 2.7309389114379883,
+        "style_singular_values_5": [
+          86.29713497610155,
+          29.4075161090652,
+          21.33630654666943,
+          15.706864451614154,
+          4.640052756202947e-06
+        ]
+      }
+    }
+  },
+  "rung_E_schedule": {
+    "term_arithmetic_cpu": {
+      "projection_form_bit_identical": true,
+      "split_delta_form_max_abs_diff": 0.0001068115234375,
+      "term_max_abs": 290.4429016113281,
+      "note": "random h rows, CPU float32"
+    }
+  },
+  "renders": {
+    "prompt": "space_station, triggered",
+    "seeds": [
+      181905,
+      181906,
+      181907,
+      181908
+    ],
+    "width": 832,
+    "height": 1216,
+    "steps": 8,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "pipeline": "delta_surgery_seed.krea2.Krea2(study_pipeline=True), in-process, compared with the study's in-process renders",
+    "arms": {
+      "C_repair_separate_patches": {
+        "renders": 4,
+        "pixels_identical": 4,
+        "mae_0_255_per_seed": {
+          "181905": 0.0,
+          "181906": 0.0,
+          "181907": 0.0,
+          "181908": 0.0
+        },
+        "max_diff_0_255": 0,
+        "reference_arm": "repair",
+        "steps_applied": null
+      },
+      "C_repair_packaged_file": {
+        "renders": 4,
+        "pixels_identical": 0,
+        "mae_0_255_per_seed": {
+          "181905": 10.691,
+          "181906": 7.9201,
+          "181907": 4.987,
+          "181908": 22.387
+        },
+        "max_diff_0_255": 254,
+        "reference_arm": "repair",
+        "steps_applied": null
+      },
+      "D_style_dial_0_separate_patches": {
+        "renders": 4,
+        "pixels_identical": 4,
+        "mae_0_255_per_seed": {
+          "181905": 0.0,
+          "181906": 0.0,
+          "181907": 0.0,
+          "181908": 0.0
+        },
+        "max_diff_0_255": 0,
+        "reference_arm": "style_0",
+        "steps_applied": null
+      },
+      "D_style_dial_0_packaged_file": {
+        "renders": 4,
+        "pixels_identical": 0,
+        "mae_0_255_per_seed": {
+          "181905": 7.5552,
+          "181906": 6.1796,
+          "181907": 5.1419,
+          "181908": 12.5602
+        },
+        "max_diff_0_255": 229,
+        "reference_arm": "style_0",
+        "steps_applied": null
+      },
+      "style_dial_3_static_hook": {
+        "renders": 4,
+        "pixels_identical": 4,
+        "mae_0_255_per_seed": {
+          "181905": 0.0,
+          "181906": 0.0,
+          "181907": 0.0,
+          "181908": 0.0
+        },
+        "max_diff_0_255": 0,
+        "reference_arm": "static_x3",
+        "steps_applied": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "E_style_dial_6_steps_3_7_projection_form": {
+        "renders": 4,
+        "pixels_identical": 4,
+        "mae_0_255_per_seed": {
+          "181905": 0.0,
+          "181906": 0.0,
+          "181907": 0.0,
+          "181908": 0.0
+        },
+        "max_diff_0_255": 0,
+        "reference_arm": "sched_x6",
+        "steps_applied": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "E_delta_form_style_fit": {
+        "renders": 4,
+        "pixels_identical": 0,
+        "mae_0_255_per_seed": {
+          "181905": 1.6636,
+          "181906": 2.3652,
+          "181907": 2.516,
+          "181908": 3.3905
+        },
+        "max_diff_0_255": 229,
+        "reference_arm": "sched_x6",
+        "steps_applied": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "E_delta_form_split_recomputed_dirs": {
+        "renders": 4,
+        "pixels_identical": 0,
+        "mae_0_255_per_seed": {
+          "181905": 1.4684,
+          "181906": 2.1957,
+          "181907": 2.2809,
+          "181908": 3.0156
+        },
+        "max_diff_0_255": 238,
+        "reference_arm": "sched_x6",
+        "steps_applied": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      }
+    },
+    "cli_render_E_seed_181906": {
+      "command": "detangle render --lora blend --lora rest:6 --schedule full:6:3-7 --project-onto study-directions --study-pipeline",
+      "pixels_identical": true
+    },
+    "private_pipeline_self_check": {
+      "seed": 181905,
+      "arm": "style_0",
+      "pixels_identical": true
+    }
+  },
+  "collector_smoke": {
+    "collect_layers": {
+      "pairs": 2,
+      "flow_fractions": 6,
+      "capacity": 64,
+      "layers": 256,
+      "wall_seconds": 87.4,
+      "repair_consumed": true,
+      "scope": "Mapping and compatibility only; not compared with the historical training-runtime captures"
+    },
+    "collect_text": {
+      "prompts": 592,
+      "wall_seconds": 76.7,
+      "output_bytes": 1321273984
+    }
+  },
+  "timing_seconds": {
+    "blend": "0.26-0.73 per file",
+    "amp_fit_gpu_full": 13.8,
+    "amp_fit_gpu_style_or_rest": 33.0,
+    "render_8_steps": "6.7-11.0"
+  },
+  "scope": "Weight-level and pixel-level reproduction of one private adapter's composite repair on its own inputs. It does not establish that the settings transfer to other LoRAs."
+}

@@ -14,6 +14,8 @@ dependencies = ["torch>=2.1", "safetensors>=0.4"]
 
 [project.optional-dependencies]
 test = ["Pillow>=10"]
+# The Krea 2 collector/sampler also needs a ComfyUI checkout with Krea 2 support (--comfyui or DETANGLE_COMFYUI).
+krea2 = ["Pillow>=10", "numpy"]
 
 [project.scripts]
 detangle = "delta_surgery_seed.cli:main"
